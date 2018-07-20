@@ -1,4 +1,4 @@
-# Full-Stack Project
+# Full-Stack Project: Front-End
 
 My project is a tracking program for keeping tabs on the development of loosely-structured work. It records the particulars of self-directed tasks, and can be used by artists, musicians or anyone with a self-designed project.
 
