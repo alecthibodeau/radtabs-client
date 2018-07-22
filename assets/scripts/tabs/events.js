@@ -26,12 +26,18 @@ const onDeleteTab = (event) => {
     .catch(ui.failure)
 }
 
-const addHandlers = () => {
+const onTestButton = () => {
+  console.log('Whee!')
+}
+
+const addTabHandlers = () => {
+  $('.info-section').hide()
   $('#getTabsButton').on('click', onGetTabs)
   $('#clearTabsButton').on('click', onClearTabs)
-  $('.content').on('click', 'button', onDeleteTab)
+  $('.tab-return-content').on('click', '#update-button', onTestButton)
+  $('.tab-return-content').on('click', '#delete-button', onDeleteTab)
 }
 
 module.exports = {
-  addHandlers
+  addTabHandlers
 }

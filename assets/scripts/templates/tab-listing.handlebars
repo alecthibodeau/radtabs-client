@@ -4,16 +4,94 @@
   <!-- Don't uncomment yet -->
 
  <!-- Developers, why are we using data-id and not just id? -->
-  <h1 data-id="{{tab.id}}"> <small>Project: {{tab.project_name}}</small></h1>
+  <!-- <h1 data-id="{{tab.id}}">
+    <small>Date:
+      {{#if tab.date}}
+        {{tab.date}}
+      {{else}}
+        No info given.
+      {{/if}}
+    </small></h1> -->
 
-  <ul data-id="{{tab.id}}">
-    <li>{{#if tab.task}}
-      {{tab.task}}
-    {{else}}
-      No author provided, bruh
-    {{/if}}</li>
-    <li><button type="submit">Remove</button></li>
-  </ul>
+  <tr data-id="{{tab.id}}">
+    <td class="info-td">
+      {{#if tab.date}}
+        {{tab.date}}
+      {{else}}
+        No info given.
+      {{/if}}
+    </td>
+    <td class="info-td">
+      {{#if tab.project_name}}
+        {{tab.project_name}}
+      {{else}}
+        No info given.
+      {{/if}}
+    </td>
+    <td class="info-td">
+      {{#if tab.task}}
+        {{tab.task}}
+      {{else}}
+        No info given.
+      {{/if}}
+    </td>
+    <td class="info-td">
+      {{#if tab.time_spent}}
+        {{tab.time_spent}}
+      {{else}}
+        No info given.
+      {{/if}}
+    </td>
+    <td class="info-td">
+      {{#if tab.notes}}
+        {{tab.notes}}
+      {{else}}
+        No info given.
+      {{/if}}
+    </td>
+    <td><button type="submit" id="update-button" class="row-button">Update</button></td>
+    <td><button type="submit" id="delete-button" class="row-button">Remove</button></td>
+  </tr>
+
+  <!-- <ul data-id="{{tab.id}}">
+    <li><span class="category">Date:</span>
+      {{#if tab.date}}
+        {{tab.date}}
+      {{else}}
+        No info given.
+      {{/if}}
+    </li>
+    <li><span class="category">Project:</span>
+      {{#if tab.project_name}}
+        {{tab.project_name}}
+      {{else}}
+        No info given.
+      {{/if}}
+    </li>
+    <li><span class="category">Task:</span>
+      {{#if tab.task}}
+        {{tab.task}}
+      {{else}}
+        No info given.
+      {{/if}}
+    </li>
+    <li><span class="category">Minutes:</span>
+      {{#if tab.time_spent}}
+        {{tab.time_spent}}
+      {{else}}
+        No info given.
+      {{/if}}
+    </li>
+    <li><span class="category">Notes:</span>
+      {{#if tab.notes}}
+        {{tab.notes}}
+      {{else}}
+        No info given.
+      {{/if}}
+    </li>
+    <li><button type="submit" id="update-button">Update</button></li>
+    <li><button type="submit" id="delete-button">Remove</button></li>
+  </ul> -->
 
   <!-- This was the former code for just get and clear… -->
   <!-- <div>

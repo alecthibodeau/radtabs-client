@@ -46,14 +46,10 @@ const onSignOut = function (event) {
 }
 
 const addAuthHandlers = () => {
-  // $('#new-game').on('click', onClickNewGame)
-  // $('#nav-game-stats').on('click', onRetrieveOverGames)
-  $('#nav-change-password').hide()
-  $('#nav-game-stats').hide()
-  $('#nav-sign-out').hide().on('click', onSignOut)
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
+  $('#nav-sign-out').on('click', onSignOut)
 }
 
 module.exports = {

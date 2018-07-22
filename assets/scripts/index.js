@@ -12,7 +12,7 @@ const tabEvents = require('./tabs/events.js')
 $(() => {
   // your JS code goes here
   authEvents.addAuthHandlers()
-  tabEvents.addHandlers()
+  tabEvents.addTabHandlers()
   // Code to reset modal fields to default upon close…
   $('body').on('hidden.bs.modal', '.modal', function () {
     $(this).find('input[type="text"],input[type="email"],input[type="password"],textarea,select').each(function () {

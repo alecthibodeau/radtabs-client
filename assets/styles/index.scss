@@ -1,9 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import url('https://fonts.googleapis.com/css?family=Varela+Round');
-@import url('https://fonts.googleapis.com/css?family=Monoton');
-@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Monoton');
+// @import url('https://fonts.googleapis.com/css?family=Varela+Round');
+// @import url('https://fonts.googleapis.com/css?family=Monoton');
+// @import url('https://fonts.googleapis.com/css?family=Fredoka+One|Monoton');
+@import url('https://fonts.googleapis.com/css?family=Aldrich|Fredoka+One|Monoton|Varela+Round');
 
 // Alec's mixes…
 $five-percent-gray: #f2f2f2;
@@ -33,8 +34,13 @@ $cloud-white: #f7f0e3;
 $lines-brown: #3a2328;
 $stem-green: #358d65;
 
+main {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
 h1 {
-  font-family: 'Monoton', sans-serif;
+  font-family: 'Aldrich', sans-serif;
   // font-family: 'Fredoka One', sans-serif;
   text-transform: uppercase;
 }
@@ -49,15 +55,15 @@ h1 {
   top: 0;
 }
 
-.gaming-buttons {
-  margin: 0 auto;
-  max-height: 150px;
-  max-width: 300px;
-  overflow: auto;
-  padding: 0;
-  position: relative;
-  top: 0;
-}
+// .user-buttons {
+//   margin: 0 auto;
+//   max-height: 150px;
+//   max-width: 300px;
+//   overflow: auto;
+//   padding: 0;
+//   position: relative;
+//   top: 0;
+// }
 
 .big-button {
   background-color: $rainbow-yellow;
@@ -80,6 +86,22 @@ h1 {
   }
 }
 
+.tab-nav {
+  // align-content: center; Note: this property has no effect when there is only one line of flex items.
+  background-color: $red;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  max-height: 70px;
+  max-width: 700px;
+  overflow: auto;
+  padding: 10px 0;
+  position: relative;
+  top: 0;
+}
+
 .tab-button {
   background-color: $rainbow-yellow;
   border: 0;
@@ -92,23 +114,98 @@ h1 {
   max-height: 60px;
   max-width: 80%;
   padding: 3px 7px;
-  // position: relative;
+  position: relative;
   // right: 50%;
   text-transform: uppercase;
+  top: 4px;
 
   &:focus {
     outline: 0;
   }
 }
 
-.tab-nav {
+.row-button {
+  background-color: $stem-green;
+  border-radius: 5px;
+  color: $cloud-white;
+  cursor: pointer;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 10px;
+  height: 20px;
+  text-transform: uppercase;
+  // left: 4px;
+  // margin: 0 auto;
+  // padding: 3px;
+  // position: relative;
+  // text-align: center;
+  // top: -2px;
+  // user-select: none;
+  // vertical-align: baseline;
+  // width: 80px;
+}
+
+
+.info-section {
   margin: 0 auto;
-  max-height: 150px;
-  max-width: 300px;
-  overflow: auto;
+  width: 800px;
+}
+
+.table-headers {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.tab-return-content {
+  margin: 0 auto;
+  width: 100%;
+}
+
+td {
+  display: table-cell;
+  vertical-align: inherit;
+  width: 80px;
+
+  &.header-td {
+    color: $rainbow-orange;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &.info-td {
+    color: $lines-brown;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 15px;
+    // font-weight: bold;
+  }
+}
+
+.category {
+  color: $rainbow-orange;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+ul {
+  // display: flex;
+  // flex-direction: row;
+  // flex-wrap: nowrap;
+  // justify-content: flex-start;
+  list-style-type: none;
+  margin: 0 auto;
   padding: 0;
-  position: relative;
-  top: 0;
+}
+
+li {
+  display: inline;
+}
+
+th {
+  display: table-cell;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: inherit;
 }
 
 .modal-title {
@@ -126,7 +223,7 @@ fieldset {
   margin: auto;
 }
 
-input {
+input:not(.tab-button) {
   color: $lines-brown;
   font-family: 'Varela Round', sans-serif;
   font-size: 16px;

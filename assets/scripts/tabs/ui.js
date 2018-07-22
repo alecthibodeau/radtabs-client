@@ -5,11 +5,13 @@ const showTabsTemplate = require('../templates/tab-listing.handlebars')
 const getTabsSuccess = (data) => {
   console.log(data)
   const showTabsHtml = showTabsTemplate({ tabs: data.tabs })
-  $('.content').html(showTabsHtml)
+  $('.info-section').show()
+  $('.tab-return-content').html(showTabsHtml)
 }
 
 const clearTabs = () => {
-  $('.content').empty()
+  $('.tab-return-content').empty()
+  $('.info-section').hide()
 }
 
 const failure = (error) => {
