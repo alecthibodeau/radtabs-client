@@ -2,3 +2,153 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Monoton');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One|Monoton');
+
+// Alec's mixes…
+$five-percent-gray: #f2f2f2;
+$six-percent-gray: #f0f0f0;
+$thirty-percent-gray: #b3b3b3;
+$fifty-percent-gray: #7f7f7f;
+$black: #000;
+$white: #fff;
+$red: #f00;
+$green: #0f0;
+$blue: #00f;
+$cyan: #0ff;
+$magenta: #f0f;
+$yellow: #ff0;
+$rainbow-red: #f27089;
+$rainbow-orange: #fca778;
+$rainbow-yellow: #fbde84;
+$rainbow-yellow-light: rgba(249, 216, 113, 0.15);
+$rainbow-green: #9ac479;
+$rainbow-blue: #74a6cf;
+$grass-green: #b8d77d;
+$grass-green-light: rgba(171, 209, 106, 0.1);
+$panda-purple: #9f86b0;
+$dolphin-pink: #f9a2b6;
+$sky-blue: #a7c5df;
+$cloud-white: #f7f0e3;
+$lines-brown: #3a2328;
+$stem-green: #358d65;
+
+h1 {
+  font-family: 'Monoton', sans-serif;
+  // font-family: 'Fredoka One', sans-serif;
+  text-transform: uppercase;
+}
+
+.starting-buttons {
+  margin: 0 auto;
+  max-height: 150px;
+  max-width: 300px;
+  overflow: auto;
+  padding: 0;
+  position: relative;
+  top: 0;
+}
+
+.gaming-buttons {
+  margin: 0 auto;
+  max-height: 150px;
+  max-width: 300px;
+  overflow: auto;
+  padding: 0;
+  position: relative;
+  top: 0;
+}
+
+.big-button {
+  background-color: $rainbow-yellow;
+  border: 0;
+  border-radius: 5px;
+  color: $lines-brown;
+  display: block;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
+  margin: 0 auto 10px;
+  max-height: 60px;
+  max-width: 80%;
+  padding: 3px 7px;
+  // position: relative;
+  // right: 50%;
+  text-transform: uppercase;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.tab-button {
+  background-color: $rainbow-yellow;
+  border: 0;
+  border-radius: 5px;
+  color: $lines-brown;
+  display: inline;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
+  margin: 0 auto 10px;
+  max-height: 60px;
+  max-width: 80%;
+  padding: 3px 7px;
+  // position: relative;
+  // right: 50%;
+  text-transform: uppercase;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.tab-nav {
+  margin: 0 auto;
+  max-height: 150px;
+  max-width: 300px;
+  overflow: auto;
+  padding: 0;
+  position: relative;
+  top: 0;
+}
+
+.modal-title {
+  color: $rainbow-orange;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 20px;
+  margin-bottom: 5px;
+  pointer-events: none;
+  text-align: center;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+fieldset {
+  margin: auto;
+}
+
+input {
+  color: $lines-brown;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 16px;
+  margin: 2% 5%;
+  width: 90%;
+}
+
+.modal-content {
+  padding: 3%;
+}
+
+.form-button {
+  background-color: $rainbow-yellow;
+  border: 0;
+  border-radius: 5px;
+  color: $lines-brown;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 16px;
+  padding: 3px 7px;
+  text-transform: uppercase;
+
+  &:focus {
+    outline: 0;
+  }
+}
