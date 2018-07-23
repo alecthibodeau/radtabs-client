@@ -10,7 +10,7 @@ const signUpSuccess = function (data) {
   setTimeout(function () {
     $('#signUpModal').modal('hide')
     $('#modalTitleSignUp').text('Sign up').css('color', '#fca778')
-  }, 3000)
+  }, store.successTimeout)
   // console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -20,7 +20,7 @@ const signUpFailure = function (error) {
     // $('#signUpModal').modal('hide')
     $('#modalTitleSignUp').text('Sign up').css('color', '#fca778')
     // $('#sign-up').show()
-  }, 5000)
+  }, store.failureTimeout)
   console.log('signUpFailure ran. Error is :', error)
 }
 
@@ -34,7 +34,7 @@ const signInSuccess = function (data) {
     $('#signInModal').modal('hide')
     $('#modalTitleSignIn').text('Sign in').css('color', '#fca778')
     $('#sign-in').show()
-  }, 3000)
+  }, store.successTimeout)
   // console.log('signInSuccess ran. Data is :', data)
   // store is an empty object: store = {}. We'll fill it with information. See store.js
   store.user = data.user
@@ -46,7 +46,7 @@ const signInFailure = function (error) {
     // $('#signInModal').modal('hide')
     $('#modalTitleSignIn').text('Sign in').css('color', '#fca778')
     // $('#sign-in').show()
-  }, 5000)
+  }, store.failureTimeout)
   console.log('signInFailure ran. Error is :', error)
 }
 
@@ -57,7 +57,7 @@ const changePasswordSuccess = function (data) {
     $('#changePasswordModal').modal('hide')
     $('#modalTitleChangePassword').text('Change password').css('color', '#fca778')
     $('#change-password').show()
-  }, 3000)
+  }, store.successTimeout)
   // console.log('changePasswordSuccess ran and nothing was returned :', data)
 }
 
@@ -67,7 +67,7 @@ const changePasswordFailure = function (error) {
     // $('#changePasswordModal').modal('hide')
     $('#modalTitleChangePassword').text('Change password').css('color', '#fca778')
     // $('#change-password').show(1)
-  }, 5000)
+  }, store.failureTimeout)
   console.log('changePasswordFailure ran. Error is :', error)
 }
 
@@ -84,7 +84,7 @@ const signOutSuccess = function (animateGameBoard, onClickResetSession, onClickC
   setTimeout(function () {
     $('#signOutModal').modal('hide')
     $('#modalTitleSignOut').text('Sign out').css('color', '#fca778')
-  }, 3000)
+  }, store.successTimeout)
   // console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
@@ -94,7 +94,7 @@ const signOutFailure = function (error) {
   setTimeout(function () {
     $('#signOutModal').modal('hide')
     $('#modalTitleSignOut').text('Sign out').css('color', '#fca778')
-  }, 5000)
+  }, store.failureTimeout)
   console.log('signOutFailure ran. Error is :', error)
 }
 

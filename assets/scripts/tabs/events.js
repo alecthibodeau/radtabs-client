@@ -5,13 +5,17 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api.js')
 const ui = require('./ui.js')
 
-let tabId = 1000
+const store = require('../store')
 
-const onGetTabs = (event) => {
-  event.preventDefault()
+const getTabs = () => {
   api.getTabs()
     .then(ui.getTabsSuccess)
     .catch(ui.failure)
+}
+
+const onGetTabs = (event) => {
+  event.preventDefault()
+  getTabs()
 }
 
 const onClearTabs = (event) => {
@@ -27,23 +31,39 @@ const onNewTab = (event) => {
   const data = getFormFields(event.target)
   api.newTab(data)
     .then(ui.newTabSuccess(data))
+    .then(getTabs)
     .catch(ui.newTabFailure)
 }
 
-const getTabId = (event) => {
-  tabId = $(event.target).closest('tr').attr('data-id')
-  console.log(`tabId is ${tabId}`)
+const saveTabId = (event) => {
+  store.tabId = $(event.target).closest('tr').attr('data-id')
+  console.log(`tabId is ${store.tabId}`)
 }
 
-const onUpdateTab = (event, tabId) => {
+// Arjun's recommendation…
+// const saveTab = (event) => {
+//   store.tab = {
+//     tab_id: $(event.target).closest('tr').attr('data-id'),
+//     date:
+//     project_name:
+//     task:
+//     time_spent:
+//     notes:
+//   }
+//   store.tabId =
+//   console.log(`tabId is ${store.tabId}`)
+// }
+
+const onUpdateTab = (event) => {
+  console.log(`tabId is: ${store.tabId}`)
   $('.modal-field').find('input').val('')
   // console.log('Update Tab function starts')
   event.preventDefault()
   const data = getFormFields(event.target)
   // const tabId = $(event.target).closest('tr').attr('data-id')
-  console.log(`tabId is: ${tabId}`)
-  api.updateTab(data, tabId)
+  api.updateTab(data, store.tabId)
     .then(ui.updateTabSuccess)
+    .then(getTabs)
     .catch(ui.updateTabFailure)
 }
 
@@ -71,7 +91,7 @@ const addTabHandlers = () => {
   $('#clearTabsButton').on('click', onClearTabs)
   $('#new-tab').on('submit', onNewTab)
   $('#update-tab').on('submit', onUpdateTab)
-  $('.tab-return-content').on('click', '#update-button', getTabId)
+  $('.tab-return-content').on('click', '#update-button', saveTabId)
   // $('.tab-return-content').on('click', '#update-button', onTestButton)
   $('.tab-return-content').on('click', '#delete-button', onDeleteTab)
 }
