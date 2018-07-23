@@ -9,7 +9,33 @@ const getTabs = function () {
   })
 }
 
-// Add this new function…
+const createTab = function () {
+  // console.log(store.user.id)
+  // console.log(store.user.email)
+  return $.ajax({
+    url: config.apiUrl + '/tabs',
+    method: 'POST'// ,
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // },
+    // data: JSON.stringify(tab)
+  })
+}
+
+const updateTab = (tabId) => {
+  // console.log(store.user.id)
+  // console.log(store.user.email)
+  return $.ajax({
+    url: config.apiUrl + '/tabs/' + tabId,
+    method: 'PATCH'// ,
+    // headers: {
+    //   Authorization: 'Token token=' + store.user.token
+    // },
+    // data: JSON.stringify(tab)
+  })
+}
+
+// Added the structure of this new function during Handlebars lesson…
 const deleteTab = (tabId) => {
   return $.ajax({
     url: config.apiUrl + '/tabs/' + tabId,
@@ -23,5 +49,7 @@ const deleteTab = (tabId) => {
 
 module.exports = {
   getTabs,
+  createTab,
+  updateTab,
   deleteTab
 }

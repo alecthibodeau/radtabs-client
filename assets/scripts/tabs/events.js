@@ -1,5 +1,7 @@
 'use strict'
 
+const getFormFields = require('../../../lib/get-form-fields')
+
 const api = require('./api.js')
 const ui = require('./ui.js')
 
@@ -15,10 +17,29 @@ const onClearTabs = (event) => {
   ui.clearTabs()
 }
 
+const onNewTab = (event) => {
+  console.log('New Tab function starts')
+  event.preventDefault()
+  const data = getFormFields(this)
+  api.newTab(data)
+    .then(ui.newTabSuccess)
+    .catch(ui.newTabFailure)
+}
+
+const onUpdateTab = (event) => {
+  console.log('Update Tab function starts')
+  event.preventDefault()
+  const data = getFormFields(this)
+  api.updateTab(data)
+    .then(ui.updateTabSuccess)
+    .catch(ui.updateTabFailure)
+}
+
 const onDeleteTab = (event) => {
+  console.log('Delete Tab function starts')
   event.preventDefault()
   // closest is a handlebar method that will look for the closest ul and target the data id
-  const tabId = $(event.target).closest('ul').attr('data-id')
+  const tabId = $(event.target).closest('tr').attr('data-id')
   api.deleteTab(tabId)
   // may need refactoring
     .then(() => onGetTabs(event))
@@ -27,13 +48,15 @@ const onDeleteTab = (event) => {
 }
 
 const onTestButton = () => {
-  console.log('Whee!')
+  console.log('Launch update modal')
 }
 
 const addTabHandlers = () => {
   $('.info-section').hide()
   $('#getTabsButton').on('click', onGetTabs)
   $('#clearTabsButton').on('click', onClearTabs)
+  $('#new-tab').on('submit', onNewTab)
+  $('#update-tab').on('submit', onUpdateTab)
   $('.tab-return-content').on('click', '#update-button', onTestButton)
   $('.tab-return-content').on('click', '#delete-button', onDeleteTab)
 }

@@ -22,10 +22,27 @@
           </div>
           <!-- <div class="user-buttons"> -->
           <div class="tab-nav">
-            <input class="tab-button" id="nav-change-password" value="change password" type="button" data-toggle="modal" data-target="#changePasswordModal">
-            <input class="tab-button" id="nav-sign-out" value="sign out" type="button" data-toggle="modal" data-target="#signOutModal">
             <button class="tab-button" id="getTabsButton">Get Tabs</button>
             <button class="tab-button" id="clearTabsButton">Clear Tabs</button>
+            <input class="tab-button" id="nav-new-tab" value="new tab" type="button" data-toggle="modal" data-target="#newTabModal">
+            <input class="tab-button" id="nav-change-password" value="change password" type="button" data-toggle="modal" data-target="#changePasswordModal">
+            <input class="tab-button" id="nav-sign-out" value="sign out" type="button" data-toggle="modal" data-target="#signOutModal">
+          </div>
+
+          <!-- info section -->
+          <div class="info-section">
+            <table class="table-headers">
+                <tr>
+                  <td class="header-td">Date</td>
+                  <td class="header-td">Project</td>
+                  <td class="header-td">Task</td>
+                  <td class="header-td">Minutes</td>
+                  <td class="header-td">Notes</td>
+                  <td class="header-td">Update</td>
+                  <td class="header-td">Remove</td>
+                </tr>
+            </table>
+            <table id="tab-return-content" class="tab-return-content"></table>
           </div>
 
       <!-- Sign Up Modal Begins -->
@@ -83,19 +100,47 @@
       </div>
       <!-- Change Password Modal Ends -->
 
-      <!-- Game Stats Modal Begins -->
-      <div class="modal fade" id="gameStatsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <!-- New Tab Modal Begins -->
+      <div class="modal fade" id="newTabModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="modalTitleGameStats">Game Stats</h4>
-            <div id="stats-total-games-over" class="total-stats-div">Loading…</div>
-            <div id="stats-sum-games-over" class="sum-stats-div"></div>
-            <div id="stats-games-over" class="games-stats-div"></div>
+            <h4 class="modal-title" id="modalTitleNewTab">New Tab</h4>
+            <form id="new-tab" class="new-tab-panel">
+              <fieldset>
+                <input type="password" name="tab[date]" placeholder="Date">
+                <input type="password" name="tab[project_name]" placeholder="Project">
+                <input type="password" name="tab[task]" placeholder="Task">
+                <input type="password" name="tab[time_spent]" placeholder="Minutes">
+                <input type="password" name="tab[notes]" placeholder="Notes">
+                <input type="submit" class="form-button" value="submit">
+              </fieldset>
+            </form>
           </div>
         </div>
       </div>
-      <!-- Game Stats Modal Ends -->
+      <!-- New Tab Modal Ends -->
+
+      <!-- Update Tab Modal Begins -->
+      <div class="modal fade" id="updateTabModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modalTitleUpdateTab">Update Tab</h4>
+            <form id="update-tab" class="update-tab-panel">
+              <fieldset>
+                <input type="password" name="tab[date]" placeholder="Date">
+                <input type="password" name="tab[project_name]" placeholder="Project">
+                <input type="password" name="tab[task]" placeholder="Task">
+                <input type="password" name="tab[time_spent]" placeholder="Minutes">
+                <input type="password" name="tab[notes]" placeholder="Notes">
+                <input type="submit" class="form-button" value="submit">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Update Tab Modal Ends -->
 
       <!-- Sign Out Modal Begins -->
       <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -108,22 +153,19 @@
       </div>
       <!-- Sign Out Modal Ends -->
 
-
-      <!-- info section -->
-      <div class="info-section">
-        <table class="table-headers">
-            <tr>
-              <td class="header-td">Date</td>
-              <td class="header-td">Project</td>
-              <td class="header-td">Task</td>
-              <td class="header-td">Minutes</td>
-              <td class="header-td">Notes</td>
-              <td class="header-td">Update</td>
-              <td class="header-td">Remove</td>
-            </tr>
-        </table>
-        <table id="tab-return-content" class="tab-return-content"></table>
-      </div>
+      <!-- Game Stats Modal Begins -->
+      <!-- <div class="modal fade" id="gameStatsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modalTitleGameStats">Game Stats</h4>
+            <div id="stats-total-games-over" class="total-stats-div">Loading…</div>
+            <div id="stats-sum-games-over" class="sum-stats-div"></div>
+            <div id="stats-games-over" class="games-stats-div"></div>
+          </div>
+        </div>
+      </div> -->
+      <!-- Game Stats Modal Ends -->
 
       </main>
     </body>
