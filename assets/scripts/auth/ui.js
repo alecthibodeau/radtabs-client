@@ -78,6 +78,7 @@ const signOutSuccess = function (animateGameBoard, onClickResetSession, onClickC
   $('#modalTitleSignOut').text('Signed out successfully').css('color', '#9ac479')
   $('#nav-sign-up').show()
   $('#nav-sign-in').show()
+  $('.info-section').hide()
   $('.tab-nav').hide()
 
   setTimeout(function () {
