@@ -1,37 +1,42 @@
 'use strict'
 
 const config = require('../config')
-// const store = require('../store')
+const store = require('../store')
 
 const getTabs = function () {
   return $.ajax({
-    url: config.apiUrl + '/tabs'
+    url: config.apiUrl + '/tabs',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
-const createTab = function () {
+const newTab = function (data) {
   // console.log(store.user.id)
   // console.log(store.user.email)
   return $.ajax({
     url: config.apiUrl + '/tabs',
-    method: 'POST'// ,
-    // headers: {
-    //   Authorization: 'Token token=' + store.user.token
-    // },
-    // data: JSON.stringify(tab)
+    method: 'POST',
+    data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+    //, data: JSON.stringify(data)
   })
 }
 
-const updateTab = (tabId) => {
+const updateTab = (data, tabId) => {
   // console.log(store.user.id)
   // console.log(store.user.email)
   return $.ajax({
     url: config.apiUrl + '/tabs/' + tabId,
-    method: 'PATCH'// ,
-    // headers: {
-    //   Authorization: 'Token token=' + store.user.token
-    // },
-    // data: JSON.stringify(tab)
+    method: 'PATCH',
+    data,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+    //, data: JSON.stringify(data)
   })
 }
 
@@ -39,17 +44,17 @@ const updateTab = (tabId) => {
 const deleteTab = (tabId) => {
   return $.ajax({
     url: config.apiUrl + '/tabs/' + tabId,
-    method: 'DELETE'
-    // Code from game project…
-    // headers: {
-    //   Authorization: 'Token token=' + store.user.token
-    // },
+    method: 'DELETE',
+    // Auth code from game project…
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
 module.exports = {
   getTabs,
-  createTab,
+  newTab,
   updateTab,
   deleteTab
 }

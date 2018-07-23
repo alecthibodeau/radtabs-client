@@ -11,8 +11,6 @@ const signUpSuccess = function (data) {
     $('#signUpModal').modal('hide')
     $('#modalTitleSignUp').text('Sign up').css('color', '#fca778')
   }, 3000)
-  // $('#message').text('Signed up successfully')
-  // $('#message').css('background-color', 'green')
   // console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -23,8 +21,6 @@ const signUpFailure = function (error) {
     $('#modalTitleSignUp').text('Sign up').css('color', '#fca778')
     // $('#sign-up').show()
   }, 5000)
-  // $('#message').text('Error on sign up')
-  // $('#message').css('background-color', 'red')
   console.log('signUpFailure ran. Error is :', error)
 }
 
@@ -33,18 +29,15 @@ const signInSuccess = function (data) {
   $('#sign-in').slideToggle(200)
   $('#nav-sign-up').hide()
   $('#nav-sign-in').hide()
-  $('#nav-change-password').show()
-  $('#nav-game-stats').show()
-  $('#nav-sign-out').show()
-  $('.new-game-area').addClass('playable')
+  $('.tab-nav').show()
   setTimeout(function () {
     $('#signInModal').modal('hide')
     $('#modalTitleSignIn').text('Sign in').css('color', '#fca778')
     $('#sign-in').show()
   }, 3000)
   // console.log('signInSuccess ran. Data is :', data)
-  store.user = data.user
   // store is an empty object: store = {}. We'll fill it with information. See store.js
+  store.user = data.user
 }
 
 const signInFailure = function (error) {
@@ -85,17 +78,8 @@ const signOutSuccess = function (animateGameBoard, onClickResetSession, onClickC
   $('#modalTitleSignOut').text('Signed out successfully').css('color', '#9ac479')
   $('#nav-sign-up').show()
   $('#nav-sign-in').show()
-  $('#nav-change-password').hide()
-  $('#nav-game-stats').hide()
-  $('#nav-sign-out').hide()
-  $('.board-cell').off('click', onClickCell).addClass('played').addClass('game-over').html('')
-  $('.board-grid').removeClass('x-won').removeClass('o-won').addClass('playable')
-  $('.game-status-area').removeClass('playable')
-  $('.game-session-area').removeClass('playable')
-  $('.new-game-area').removeClass('playable')
-  $('#stats-total-games-over').html('Loading…')
-  $('#stats-sum-games-over').html('')
-  $('#stats-games-over').html('')
+  $('.tab-nav').hide()
+
   setTimeout(function () {
     $('#signOutModal').modal('hide')
     $('#modalTitleSignOut').text('Sign out').css('color', '#fca778')
