@@ -26,7 +26,6 @@ const onClearTabs = (event) => {
 // $('#new-tab').reset()
 
 const onNewTab = (event) => {
-  $('.modal-field').find('input').val('')
   event.preventDefault()
   const data = getFormFields(event.target)
   api.newTab(data)
@@ -39,6 +38,17 @@ const saveTabId = (event) => {
   store.tabId = $(event.target).closest('tr').attr('data-id')
   console.log(`tabId is ${store.tabId}`)
 }
+
+// const saveTab = (event) => {
+//     store.tab = {
+//       tab_id: $(event.target).closest('tr').attr('data-id'),
+//       date:
+//       project_name:
+//       task:
+//       time_spent:
+//       notes:
+//     }
+// }
 
 // Arjun's recommendation…
 // const saveTab = (event) => {

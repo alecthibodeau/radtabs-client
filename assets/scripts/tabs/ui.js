@@ -25,6 +25,7 @@ const newTabSuccess = (data) => {
   setTimeout(function () {
     $('#newTabModal').modal('hide')
     $('#modalTitleNewTab').text('New tab').css('color', '#fca778')
+    $('.modal-field').val('input', '') // to reset modal fields
   }, store.successTimeout)
   // events.onGetTabs(event)
 }
