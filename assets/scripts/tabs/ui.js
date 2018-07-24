@@ -23,6 +23,9 @@ const newTabSuccess = (data) => {
   setTimeout(function () {
     $('#newTabModal').modal('hide')
     $('#modalTitleNewTab').text('New tab').css('color', '#fca778')
+    // $('.modal-field').empty()
+    // $('.modal-field').val('input', '')
+    // $('.modal-field').removeData()
     // $('.modal-field').val('input', '')
     // $('.modal-field').find('input').val('')
   }, store.successTimeout)
