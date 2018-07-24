@@ -23,55 +23,45 @@ const onClearTabs = (event) => {
   ui.clearTabs()
 }
 
-// $('#new-tab').reset()
-
 const onNewTab = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
+  // $('.modal-field').on('hidden.bs.modal', function () {
+  //   $(this).find('form')[0].reset()
+  // })
   api.newTab(data)
     .then(ui.newTabSuccess(data))
     .then(getTabs)
     .catch(ui.newTabFailure)
 }
 
-const saveTabId = (event) => {
-  store.tabId = $(event.target).closest('tr').attr('data-id')
-  console.log(`tabId is ${store.tabId}`)
+const saveTab = (event) => {
+  store.tab = {
+    tab_id: $(event.target).closest('tr').attr('data-id'),
+    date: $(event.target).closest('tr').attr('data-date'),
+    project_name: $(event.target).closest('tr').attr('data-project_name'),
+    task: $(event.target).closest('tr').attr('data-task'),
+    time_spent: $(event.target).closest('tr').attr('data-time_spent'),
+    notes: $(event.target).closest('tr').attr('data-notes')
+  }
+  // $('#modal-field-date').val('input', `${store.tab.date}`) // to reset modal field
+  // $('#modal-field-project-name').val('input', `${store.tab.project_name}`) // to reset modal field
+  // $('#modal-field-task').val('input', `${store.tab.task}`) // to reset modal field
+  // $('#modal-field-date-time-spent').val('input', `${store.tab.time_spent}`) // to reset modal field
+  // $('#modal-field-notes').val('input', `${store.tab.notes}`) // to reset modal field
+
+  console.log(`tab id from Object is ${store.tab.tab_id}`)
+  console.log(`tab date from Object is ${store.tab.date}`)
+  console.log(`tab project from Object is ${store.tab.project_name}`)
+  console.log(`tab task from Object is ${store.tab.task}`)
+  console.log(`tab minutes from Object is ${store.tab.time_spent}`)
+  console.log(`tab notes from Object is ${store.tab.notes}`)
 }
 
-// const saveTab = (event) => {
-//     store.tab = {
-//       tab_id: $(event.target).closest('tr').attr('data-id'),
-//       date:
-//       project_name:
-//       task:
-//       time_spent:
-//       notes:
-//     }
-// }
-
-// Arjun's recommendation…
-// const saveTab = (event) => {
-//   store.tab = {
-//     tab_id: $(event.target).closest('tr').attr('data-id'),
-//     date:
-//     project_name:
-//     task:
-//     time_spent:
-//     notes:
-//   }
-//   store.tabId =
-//   console.log(`tabId is ${store.tabId}`)
-// }
-
 const onUpdateTab = (event) => {
-  console.log(`tabId is: ${store.tabId}`)
-  $('.modal-field').find('input').val('')
-  // console.log('Update Tab function starts')
   event.preventDefault()
   const data = getFormFields(event.target)
-  // const tabId = $(event.target).closest('tr').attr('data-id')
-  api.updateTab(data, store.tabId)
+  api.updateTab(data, store.tab.tab_id)
     .then(ui.updateTabSuccess)
     .then(getTabs)
     .catch(ui.updateTabFailure)
@@ -90,10 +80,6 @@ const onDeleteTab = (event) => {
     .catch(ui.failure)
 }
 
-// const onTestButton = () => {
-//   console.log('Launch update modal')
-// }
-
 const addTabHandlers = () => {
   $('.info-section').hide()
   $('.tab-nav').hide()
@@ -101,8 +87,7 @@ const addTabHandlers = () => {
   $('#clearTabsButton').on('click', onClearTabs)
   $('#new-tab').on('submit', onNewTab)
   $('#update-tab').on('submit', onUpdateTab)
-  $('.tab-return-content').on('click', '#update-button', saveTabId)
-  // $('.tab-return-content').on('click', '#update-button', onTestButton)
+  $('.tab-return-content').on('click', '#update-button', saveTab)
   $('.tab-return-content').on('click', '#delete-button', onDeleteTab)
 }
 

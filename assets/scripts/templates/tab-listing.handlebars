@@ -13,7 +13,13 @@
       {{/if}}
     </small></h1> -->
 
-  <tr data-id="{{tab.id}}">
+  <tr data-id="{{tab.id}}"
+    data-date="{{tab.date}}"
+    data-project_name="{{tab.project_name}}"
+    data-task="{{tab.task}}"
+    data-time_spent="{{tab.time_spent}}"
+    data-notes="{{tab.notes}}"
+    >
     <td class="info-td">
       {{#if tab.date}}
         {{tab.date}}
