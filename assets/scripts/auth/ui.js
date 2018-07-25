@@ -27,7 +27,8 @@ const signInSuccess = function (data) {
   $('#sign-in').slideToggle(200)
   $('#nav-sign-up').hide()
   $('#nav-sign-in').hide()
-  $('.tab-nav').show()
+  $('.nav-bar').show()
+  $('.intro-bar').hide()
   setTimeout(function () {
     $('#signInModal').modal('hide')
     $('#modalTitleSignIn').text('Sign in').css('color', '#fca778')
@@ -77,7 +78,8 @@ const signOutSuccess = function (animateGameBoard, onClickResetSession, onClickC
   $('#nav-sign-up').show()
   $('#nav-sign-in').show()
   $('.info-section').hide()
-  $('.tab-nav').hide()
+  $('.nav-bar').hide()
+  $('.intro-bar').show()
 
   setTimeout(function () {
     $('#signOutModal').modal('hide')

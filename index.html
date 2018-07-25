@@ -15,23 +15,35 @@
     <body class="container-fluid">
 
       <main>
-        <h1>Radtabs!</h1>
-          <div class="starting-buttons">
-            <input class="big-button" id="nav-sign-up" value="sign up" type="button" data-toggle="modal" data-target="#signUpModal">
-            <input class="big-button" id="nav-sign-in" value="sign in" type="button" data-toggle="modal" data-target="#signInModal">
+        <header>
+          <div class="radtabs-heading"><span class="rad-heading">Rad</span><span class="tabs-heading">tabs</span></div>
+          <div class="radtabs-text">
+            <span class="first-sentence">Artists, keep tabs on your work with Radtabs!</span> <BR>
+            Quickly enter the particulars of any project for later reference.
+            With Radtabs you can save information about Date, Project Name, Task, Time Spent and Notes.
+            Not just for artists: carpenters, gardeners, bike mechanics or anyone engaged in self-directed projects can all use Radtabs… Radtabs!
           </div>
+        </header>
 
-        <section>
-            <!-- nav bar -->
-          <div class="tab-nav">
+      <!-- nav section -->
+        <section class="nav-area">
+          <!-- intro bar -->
+          <div class="intro-bar">
+            <input class="tab-button" id="nav-sign-up" value="sign up" type="button" data-toggle="modal" data-target="#signUpModal">
+            <input class="tab-button" id="nav-sign-in" value="sign in" type="button" data-toggle="modal" data-target="#signInModal">
+          </div>
+          <!-- nav bar -->
+          <div class="nav-bar">
             <button class="tab-button" id="getTabsButton">Show Tabs</button>
             <button class="tab-button" id="clearTabsButton">Hide Tabs</button>
             <input class="tab-button" id="nav-new-tab" value="new tab" type="button" data-toggle="modal" data-target="#newTabModal">
             <input class="tab-button" id="nav-change-password" value="change password" type="button" data-toggle="modal" data-target="#changePasswordModal">
             <input class="tab-button" id="nav-sign-out" value="sign out" type="button" data-toggle="modal" data-target="#signOutModal">
           </div>
+        </section>
 
-          <!-- info section -->
+        <!-- info section -->
+        <section>
           <div class="info-section">
             <table class="table-headers">
                 <tr>
@@ -46,6 +58,8 @@
             </table>
             <table id="tab-return-content" class="tab-return-content"></table>
           </div>
+
+          <div class="extra-space"></div>
         </section>
 
       <!-- Sign Up Modal Begins -->

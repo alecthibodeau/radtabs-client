@@ -86,7 +86,7 @@ const onDeleteTab = (event) => {
 
 const addTabHandlers = () => {
   $('.info-section').hide()
-  $('.tab-nav').hide()
+  $('.nav-bar').hide()
   $('#getTabsButton').on('click', onGetTabs)
   $('#clearTabsButton').on('click', onClearTabs)
   $('#new-tab').on('submit', onNewTab)
