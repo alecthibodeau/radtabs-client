@@ -18,20 +18,27 @@ const clearTabs = () => {
 }
 
 const newTabSuccess = (data) => {
-  console.log(data)
-  $('#modalTitleNewTab').text('New tab created').css('color', '#9ac479')
+  // console.log(data)
+  $('#modalTitleNewTab').text('New tab created')
+  $('#new-tab').slideToggle(200)
+  store.successMessageColor()
   setTimeout(function () {
     $('#newTabModal').modal('hide')
-    $('#modalTitleNewTab').text('New tab').css('color', '#fca778')
+    // $('.modal-title').removeClass('success-message')
+    $('#modalTitleNewTab').text('New tab')
+    store.defaultMessageColor()
   }, store.successTimeout)
 }
 
 const updateTabSuccess = (data) => {
-  console.log(data)
-  $('#modalTitleUpdateTab').text('Tab updated').css('color', '#9ac479')
+  // console.log(data)
+  $('#modalTitleUpdateTab').text('Tab updated')
+  $('#update-tab').slideToggle(200)
+  store.successMessageColor()
   setTimeout(function () {
     $('#updateTabModal').modal('hide')
-    $('#modalTitleUpdateTab').text('Update tab').css('color', '#fca778')
+    $('#modalTitleUpdateTab').text('Update tab')
+    store.defaultMessageColor()
   }, store.successTimeout)
 }
 

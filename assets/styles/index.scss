@@ -194,6 +194,14 @@ td {
   text-align: center;
   text-transform: uppercase;
   user-select: none;
+
+  &.success-message {
+    color: $green-muted;
+  }
+
+  &.error-message {
+    color: $red-muted;
+  }
 }
 
 fieldset {

@@ -3,27 +3,32 @@
 const store = require('../store')
 
 const signUpSuccess = function (data) {
-  $('#modalTitleSignUp').text('Signed up successfully').css('color', '#9ac479')
+  $('#modalTitleSignUp').text('Signed up successfully')
+  store.successMessageColor()
   $('#sign-up').slideToggle(200)
   setTimeout(function () {
     $('#signUpModal').modal('hide')
-    $('#modalTitleSignUp').text('Sign up').css('color', '#fca778')
+    $('#modalTitleSignUp').text('Sign up')
+    store.defaultMessageColor()
   }, store.successTimeout)
   // console.log('signUpSuccess ran. Data is :', data)
 }
 
 const signUpFailure = function (error) {
-  $('#modalTitleSignUp').text('Error on sign up. Try again').css('color', '#f27089')
+  $('#modalTitleSignUp').text('Error on sign up. Try again')
+  store.errorMessageColor()
   setTimeout(function () {
     // $('#signUpModal').modal('hide')
-    $('#modalTitleSignUp').text('Sign up').css('color', '#fca778')
+    $('#modalTitleSignUp').text('Sign up')
+    store.defaultMessageColor()
     // $('#sign-up').show()
   }, store.failureTimeout)
   console.log('signUpFailure ran. Error is :', error)
 }
 
 const signInSuccess = function (data) {
-  $('#modalTitleSignIn').text('Signed in successfully').css('color', '#9ac479')
+  $('#modalTitleSignIn').text('Signed in successfully')
+  store.successMessageColor()
   $('#sign-in').slideToggle(200)
   $('#nav-sign-up').hide()
   $('#nav-sign-in').hide()
@@ -31,8 +36,9 @@ const signInSuccess = function (data) {
   $('.intro-bar').hide()
   setTimeout(function () {
     $('#signInModal').modal('hide')
-    $('#modalTitleSignIn').text('Sign in').css('color', '#fca778')
+    $('#modalTitleSignIn').text('Sign in')
     $('#sign-in').show()
+    store.defaultMessageColor()
   }, store.successTimeout)
   // console.log('signInSuccess ran. Data is :', data)
   // store is an empty object: store = {}. We'll fill it with information. See store.js
@@ -40,41 +46,45 @@ const signInSuccess = function (data) {
 }
 
 const signInFailure = function (error) {
-  $('#modalTitleSignIn').text('Error on sign in. Try again.').css('color', '#f27089')
+  $('#modalTitleSignIn').text('Error on sign in. Try again.')
+  store.errorMessageColor()
   setTimeout(function () {
     // $('#signInModal').modal('hide')
-    $('#modalTitleSignIn').text('Sign in').css('color', '#fca778')
+    $('#modalTitleSignIn').text('Sign in')
+    store.defaultMessageColor()
     // $('#sign-in').show()
   }, store.failureTimeout)
   console.log('signInFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = function (data) {
-  $('#modalTitleChangePassword').text('Changed password successfully').css('color', '#9ac479')
+  $('#modalTitleChangePassword').text('Changed password successfully')
+  store.successMessageColor()
   $('#change-password').slideToggle(200)
   setTimeout(function () {
     $('#changePasswordModal').modal('hide')
-    $('#modalTitleChangePassword').text('Change password').css('color', '#fca778')
+    $('#modalTitleChangePassword').text('Change password')
+    store.defaultMessageColor()
     $('#change-password').show()
   }, store.successTimeout)
   // console.log('changePasswordSuccess ran and nothing was returned :', data)
 }
 
 const changePasswordFailure = function (error) {
-  $('#modalTitleChangePassword').text('Error on change password. Try again.').css('color', '#f27089')
+  $('#modalTitleChangePassword').text('Error on change password. Try again.')
+  store.errorMessageColor()
   setTimeout(function () {
     // $('#changePasswordModal').modal('hide')
-    $('#modalTitleChangePassword').text('Change password').css('color', '#fca778')
+    $('#modalTitleChangePassword').text('Change password')
+    store.defaultMessageColor()
     // $('#change-password').show(1)
   }, store.failureTimeout)
   console.log('changePasswordFailure ran. Error is :', error)
 }
 
 const signOutSuccess = function (animateGameBoard, onClickResetSession, onClickCell) {
-  // const preGame = true
-  // boardEvents.animateGameBoard(preGame)
-  // gameEvents.onClickResetSession()
-  $('#modalTitleSignOut').text('Signed out successfully').css('color', '#9ac479')
+  $('#modalTitleSignOut').text('Signed out successfully')
+  store.successMessageColor()
   $('#nav-sign-up').show()
   $('#nav-sign-in').show()
   $('.info-section').hide()
@@ -83,17 +93,20 @@ const signOutSuccess = function (animateGameBoard, onClickResetSession, onClickC
 
   setTimeout(function () {
     $('#signOutModal').modal('hide')
-    $('#modalTitleSignOut').text('Sign out').css('color', '#fca778')
+    $('#modalTitleSignOut').text('Sign out')
+    store.defaultMessageColor()
   }, store.successTimeout)
   // console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
 
 const signOutFailure = function (error) {
-  $('#modalTitleSignOut').text('Error on sign out. Try again').css('color', '#f27089')
+  $('#modalTitleSignOut').text('Error on sign out. Try again')
+  store.errorMessageColor()
   setTimeout(function () {
     $('#signOutModal').modal('hide')
-    $('#modalTitleSignOut').text('Sign out').css('color', '#fca778')
+    $('#modalTitleSignOut').text('Sign out')
+    store.defaultMessageColor()
   }, store.failureTimeout)
   console.log('signOutFailure ran. Error is :', error)
 }
