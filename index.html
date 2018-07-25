@@ -43,9 +43,11 @@
         </section>
 
         <!-- info section -->
-        <section>
-          <div class="info-section">
-            <table class="table-headers">
+        <section class="info-section">
+          <!-- <div class="info-section"> -->
+
+            <!-- old table -->
+            <!-- <table class="table-headers">
                 <tr>
                   <td class="header-td">Date</td>
                   <td class="header-td">Project</td>
@@ -56,8 +58,29 @@
                   <td class="header-td">Delete</td>
                 </tr>
             </table>
-            <table id="tab-return-content" class="tab-return-content"></table>
-          </div>
+            <table id="tab-return-content" class="tab-return-content"></table> -->
+
+            <table>
+              <thead>
+                <tr>
+                  <th class="header-td">Date</th>
+                  <th class="header-td">Project</th>
+                  <th class="header-td">Task</th>
+                  <th class="header-td">Minutes</th>
+                  <th class="header-td">Notes</th>
+                  <th class="header-td">Update</th>
+                  <th class="header-td">Delete</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                    <!-- Sum info here? -->
+                </tr>
+              </tfoot>
+              <tbody id="tab-return-content" class="tab-return-content">
+              </tbody>
+            </table>
+          <!-- </div> -->
 
           <div class="extra-space"></div>
         </section>
