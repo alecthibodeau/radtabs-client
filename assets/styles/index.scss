@@ -4,7 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 // @import url('https://fonts.googleapis.com/css?family=Monoton');
 // @import url('https://fonts.googleapis.com/css?family=Fredoka+One|Monoton');
-@import url('https://fonts.googleapis.com/css?family=Aldrich|Fredoka+One|Monoton|Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Aldrich|Fredoka+One|Monoton|Varela+Round|Roboto|Audiowide');
 
 // Alec's mixes…
 $five-percent-gray: #f2f2f2;
@@ -16,6 +16,11 @@ $white: #fff;
 $red: #f00;
 $green: #0f0;
 $blue: #00f;
+$red-muted: rgba(246, 65, 84, 1);
+$green-muted: rgba(119, 225, 131, 1);
+$blue-muted: rgba(112, 115, 255, 1);
+$yellow-muted: rgba(255, 220, 100, 1);
+
 $cyan: #0ff;
 $magenta: #f0f;
 $yellow: #ff0;
@@ -39,53 +44,54 @@ main {
   max-width: 800px;
 }
 
-h1 {
-  color: $grass-green;
-  font-family: 'Aldrich', sans-serif;
-  // font-family: 'Fredoka One', sans-serif;
-  text-transform: uppercase;
+header {
+  display: fixed;
+  margin: 40 auto;
+  max-width: 800px;
+  overflow: auto;
+  padding: 8px;
+  position: relative;
 }
 
-// .big-button {
-//   background-color: $rainbow-yellow;
-//   border: 0;
-//   border-radius: 5px;
-//   color: $lines-brown;
-//   display: block;
-//   font-family: 'Varela Round', sans-serif;
-//   font-size: 18px;
-//   margin: 0 auto 10px;
-//   max-height: 60px;
-//   max-width: 80%;
-//   padding: 3px 7px;
-//   // position: relative;
-//   // right: 50%;
-//   text-transform: uppercase;
-//
-//   &:focus {
-//     outline: 0;
-//   }
-// }
-//   background-color: $rainbow-yellow;
-//   border: 0;
-//   border-radius: 5px;
-//   color: $lines-brown;
-//   display: inline;
-//   font-family: 'Varela Round', sans-serif;
-//   font-size: 18px;
-//   margin: 0 auto 10px;
-//   max-height: 60px;
-//   max-width: 80%;
-//   padding: 3px 12px;
-//   position: relative;
-//   text-transform: uppercase;
-//   top: 4px;
-// }
+.radtabs-heading {
+  color: $green-muted;
+  float: left;
+  font-family: 'Audiowide', sans-serif;
+  font-size: 42px;
+  margin: 0 20px -10px 5px;
+  position: relative;
+  right: 8px;
+  text-transform: uppercase;
+
+  & .tabs-heading {
+    color: $blue-muted;
+  }
+}
+
+.radtabs-text {
+  color: $lines-brown;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
+  position: relative;
+  top: 8px;
+}
+
+.first-sentence {
+  color: $red-muted;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 24px;
+  position: relative;
+}
+
+.nav-area {
+  margin-top: 12px;
+  position: relative;
+}
 
 .nav-bar,
 .intro-bar {
   // align-content: center; Note: this property has no effect when there is only one line of flex items.
-  background-color: $red;
+  background-color: $red-muted;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
@@ -100,14 +106,16 @@ h1 {
 }
 
 .tab-button {
-  background-color: $rainbow-yellow;
+  background-color: $yellow-muted;
   border: 0;
   border-radius: 5px;
   color: $lines-brown;
   display: inline;
-  font-family: 'Varela Round', sans-serif;
-  font-size: 18px;
-  margin: 0 auto 10px;
+  flex-grow: 1;
+  font-family: 'Audiowide', sans-serif;
+  font-size: 16px;
+  letter-spacing: 0;
+  margin: 0 8px 10px;
   max-height: 60px;
   max-width: 80%;
   padding: 3px 12px;
@@ -139,7 +147,7 @@ h1 {
 
 td {
   display: table-cell;
-  vertical-align: inherit;
+  vertical-align: top;
   width: 80px;
 
   &.header-td {
@@ -157,8 +165,8 @@ td {
   }
 }
 
-.row-button { // The style for update and remove buttons
-  background-color: $stem-green;
+.row-button { // The style for update and delete buttons
+  background-color: $blue-muted;
   border-radius: 5px;
   color: $cloud-white;
   cursor: pointer;
@@ -176,20 +184,6 @@ td {
   // vertical-align: baseline;
   // width: 80px;
 }
-
-// ul {
-//   // display: flex;
-//   // flex-direction: row;
-//   // flex-wrap: nowrap;
-//   // justify-content: flex-start;
-//   list-style-type: none;
-//   margin: 0 auto;
-//   padding: 0;
-// }
-//
-// li {
-//   display: inline;
-// }
 
 .modal-title {
   color: $rainbow-orange;
@@ -233,4 +227,8 @@ input {
   &:focus {
     outline: 0;
   }
+}
+
+.extra-space {
+  min-height: 100px;
 }
