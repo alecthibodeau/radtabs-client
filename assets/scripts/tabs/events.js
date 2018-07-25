@@ -36,6 +36,7 @@ const onNewTab = (event) => {
 }
 
 const saveTab = (event) => {
+  // Retrieve table row data on launch of Update Tab modal…
   store.tab = {
     tab_id: $(event.target).closest('tr').attr('data-id'),
     date: $(event.target).closest('tr').attr('data-date'),
@@ -44,21 +45,27 @@ const saveTab = (event) => {
     time_spent: $(event.target).closest('tr').attr('data-time_spent'),
     notes: $(event.target).closest('tr').attr('data-notes')
   }
-  // $('#modal-field-date').val('input', `${store.tab.date}`) // to reset modal field
-  // $('#modal-field-project-name').val('input', `${store.tab.project_name}`) // to reset modal field
-  // $('#modal-field-task').val('input', `${store.tab.task}`) // to reset modal field
-  // $('#modal-field-date-time-spent').val('input', `${store.tab.time_spent}`) // to reset modal field
-  // $('#modal-field-notes').val('input', `${store.tab.notes}`) // to reset modal field
-
   console.log(`tab id from Object is ${store.tab.tab_id}`)
   console.log(`tab date from Object is ${store.tab.date}`)
   console.log(`tab project from Object is ${store.tab.project_name}`)
   console.log(`tab task from Object is ${store.tab.task}`)
   console.log(`tab minutes from Object is ${store.tab.time_spent}`)
   console.log(`tab notes from Object is ${store.tab.notes}`)
+  fillField()
+}
+
+const fillField = () => {
+  // Reset form fields on launch of Update Tab modal…
+  console.log(`tab date from Function is ${store.tab.date}`)
+  $('#modal-field-date').val(store.tab.date)
+  $('#modal-field-project-name').val(store.tab.project_name)
+  $('#modal-field-task').val(store.tab.task)
+  $('#modal-field-time-spent').val(store.tab.time_spent)
+  $('#modal-field-notes').val(store.tab.notes)
 }
 
 const onUpdateTab = (event) => {
+  // On clicking submit button after updating tab…
   event.preventDefault()
   const data = getFormFields(event.target)
   api.updateTab(data, store.tab.tab_id)
@@ -70,13 +77,10 @@ const onUpdateTab = (event) => {
 const onDeleteTab = (event) => {
   console.log('Delete Tab function starts')
   event.preventDefault()
-  // closest is a handlebar method that will look for the closest ul and target the data id
+  // closest is a handlebar method that will look for the closest tr and target the data-id
   const tabId = $(event.target).closest('tr').attr('data-id')
-  console.log(`tabId is: ${tabId}`)
   api.deleteTab(tabId)
-    // may need refactoring
     .then(() => onGetTabs(event))
-    // have list refresh after remove button is being removed
     .catch(ui.failure)
 }
 
@@ -89,6 +93,13 @@ const addTabHandlers = () => {
   $('#update-tab').on('submit', onUpdateTab)
   $('.tab-return-content').on('click', '#update-button', saveTab)
   $('.tab-return-content').on('click', '#delete-button', onDeleteTab)
+
+  // $('.tab-return-content').on('click', '#update-button', function () {
+  //   $('#modal-field-date').find('input[type="text"],textarea,select').each(function () {
+  //     console.log(`tab date from Object is ${store.tab.date}`)
+  //     this.value = store.tab.date
+  //   })
+  // })
 }
 
 module.exports = {
