@@ -23,45 +23,52 @@ const onClearTabs = (event) => {
   ui.clearTabs()
 }
 
-// $('#new-tab').reset()
-
 const onNewTab = (event) => {
-  $('.modal-field').find('input').val('')
   event.preventDefault()
   const data = getFormFields(event.target)
+  // $('.modal-field').on('hidden.bs.modal', function () {
+  //   $(this).find('form')[0].reset()
+  // })
   api.newTab(data)
     .then(ui.newTabSuccess(data))
     .then(getTabs)
     .catch(ui.newTabFailure)
 }
 
-const saveTabId = (event) => {
-  store.tabId = $(event.target).closest('tr').attr('data-id')
-  console.log(`tabId is ${store.tabId}`)
+const saveTab = (event) => {
+  // Retrieve table row data on launch of Update Tab modal…
+  store.tab = {
+    tab_id: $(event.target).closest('tr').attr('data-id'),
+    date: $(event.target).closest('tr').attr('data-date'),
+    project_name: $(event.target).closest('tr').attr('data-project_name'),
+    task: $(event.target).closest('tr').attr('data-task'),
+    time_spent: $(event.target).closest('tr').attr('data-time_spent'),
+    notes: $(event.target).closest('tr').attr('data-notes')
+  }
+  console.log(`tab id from Object is ${store.tab.tab_id}`)
+  console.log(`tab date from Object is ${store.tab.date}`)
+  console.log(`tab project from Object is ${store.tab.project_name}`)
+  console.log(`tab task from Object is ${store.tab.task}`)
+  console.log(`tab minutes from Object is ${store.tab.time_spent}`)
+  console.log(`tab notes from Object is ${store.tab.notes}`)
+  fillField()
 }
 
-// Arjun's recommendation…
-// const saveTab = (event) => {
-//   store.tab = {
-//     tab_id: $(event.target).closest('tr').attr('data-id'),
-//     date:
-//     project_name:
-//     task:
-//     time_spent:
-//     notes:
-//   }
-//   store.tabId =
-//   console.log(`tabId is ${store.tabId}`)
-// }
+const fillField = () => {
+  // Reset form fields on launch of Update Tab modal…
+  console.log(`tab date from Function is ${store.tab.date}`)
+  $('#modal-field-date').val(store.tab.date)
+  $('#modal-field-project-name').val(store.tab.project_name)
+  $('#modal-field-task').val(store.tab.task)
+  $('#modal-field-time-spent').val(store.tab.time_spent)
+  $('#modal-field-notes').val(store.tab.notes)
+}
 
 const onUpdateTab = (event) => {
-  console.log(`tabId is: ${store.tabId}`)
-  $('.modal-field').find('input').val('')
-  // console.log('Update Tab function starts')
+  // On clicking submit button after updating tab…
   event.preventDefault()
   const data = getFormFields(event.target)
-  // const tabId = $(event.target).closest('tr').attr('data-id')
-  api.updateTab(data, store.tabId)
+  api.updateTab(data, store.tab.tab_id)
     .then(ui.updateTabSuccess)
     .then(getTabs)
     .catch(ui.updateTabFailure)
@@ -70,19 +77,12 @@ const onUpdateTab = (event) => {
 const onDeleteTab = (event) => {
   console.log('Delete Tab function starts')
   event.preventDefault()
-  // closest is a handlebar method that will look for the closest ul and target the data id
+  // closest is a handlebar method that will look for the closest tr and target the data-id
   const tabId = $(event.target).closest('tr').attr('data-id')
-  console.log(`tabId is: ${tabId}`)
   api.deleteTab(tabId)
-    // may need refactoring
     .then(() => onGetTabs(event))
-    // have list refresh after remove button is being removed
     .catch(ui.failure)
 }
-
-// const onTestButton = () => {
-//   console.log('Launch update modal')
-// }
 
 const addTabHandlers = () => {
   $('.info-section').hide()
@@ -91,9 +91,15 @@ const addTabHandlers = () => {
   $('#clearTabsButton').on('click', onClearTabs)
   $('#new-tab').on('submit', onNewTab)
   $('#update-tab').on('submit', onUpdateTab)
-  $('.tab-return-content').on('click', '#update-button', saveTabId)
-  // $('.tab-return-content').on('click', '#update-button', onTestButton)
+  $('.tab-return-content').on('click', '#update-button', saveTab)
   $('.tab-return-content').on('click', '#delete-button', onDeleteTab)
+
+  // $('.tab-return-content').on('click', '#update-button', function () {
+  //   $('#modal-field-date').find('input[type="text"],textarea,select').each(function () {
+  //     console.log(`tab date from Object is ${store.tab.date}`)
+  //     this.value = store.tab.date
+  //   })
+  // })
 }
 
 module.exports = {

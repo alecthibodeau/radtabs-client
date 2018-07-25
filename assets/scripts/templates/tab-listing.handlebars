@@ -13,40 +13,46 @@
       {{/if}}
     </small></h1> -->
 
-  <tr data-id="{{tab.id}}">
+  <tr data-id="{{tab.id}}"
+    data-date="{{tab.date}}"
+    data-project_name="{{tab.project_name}}"
+    data-task="{{tab.task}}"
+    data-time_spent="{{tab.time_spent}}"
+    data-notes="{{tab.notes}}"
+    >
     <td class="info-td">
       {{#if tab.date}}
         {{tab.date}}
       {{else}}
-        No info given.
+        —
       {{/if}}
     </td>
     <td class="info-td">
       {{#if tab.project_name}}
         {{tab.project_name}}
       {{else}}
-        No info given.
+        —
       {{/if}}
     </td>
     <td class="info-td">
       {{#if tab.task}}
         {{tab.task}}
       {{else}}
-        No info given.
+        —
       {{/if}}
     </td>
     <td class="info-td">
       {{#if tab.time_spent}}
         {{tab.time_spent}}
       {{else}}
-        No info given.
+        —
       {{/if}}
     </td>
     <td class="info-td">
       {{#if tab.notes}}
         {{tab.notes}}
       {{else}}
-        No info given.
+        —
       {{/if}}
     </td>
     <!-- Dummy update button… -->
@@ -54,7 +60,7 @@
     <!-- Game modal button… -->
       <!-- <td><input class="row-button" id="update-button" value="update" type="button" data-toggle="modal" data-target="#updateTabModal"></td> -->
     <td><button type="button" class="row-button" id="update-button" data-toggle="modal" data-target="#updateTabModal">Update</td>
-    <td><button type="submit" class="row-button" id="delete-button">Remove</button></td>
+    <td><button type="submit" class="row-button" id="delete-button">Delete</button></td>
   </tr>
 
   <!-- <ul data-id="{{tab.id}}">

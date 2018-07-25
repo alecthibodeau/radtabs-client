@@ -20,10 +20,12 @@
             <input class="big-button" id="nav-sign-up" value="sign up" type="button" data-toggle="modal" data-target="#signUpModal">
             <input class="big-button" id="nav-sign-in" value="sign in" type="button" data-toggle="modal" data-target="#signInModal">
           </div>
-          <!-- <div class="user-buttons"> -->
+
+        <section>
+            <!-- nav bar -->
           <div class="tab-nav">
-            <button class="tab-button" id="getTabsButton">Get Tabs</button>
-            <button class="tab-button" id="clearTabsButton">Clear Tabs</button>
+            <button class="tab-button" id="getTabsButton">Show Tabs</button>
+            <button class="tab-button" id="clearTabsButton">Hide Tabs</button>
             <input class="tab-button" id="nav-new-tab" value="new tab" type="button" data-toggle="modal" data-target="#newTabModal">
             <input class="tab-button" id="nav-change-password" value="change password" type="button" data-toggle="modal" data-target="#changePasswordModal">
             <input class="tab-button" id="nav-sign-out" value="sign out" type="button" data-toggle="modal" data-target="#signOutModal">
@@ -39,11 +41,12 @@
                   <td class="header-td">Minutes</td>
                   <td class="header-td">Notes</td>
                   <td class="header-td">Update</td>
-                  <td class="header-td">Remove</td>
+                  <td class="header-td">Delete</td>
                 </tr>
             </table>
             <table id="tab-return-content" class="tab-return-content"></table>
           </div>
+        </section>
 
       <!-- Sign Up Modal Begins -->
       <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -129,12 +132,12 @@
             <h4 class="modal-title" id="modalTitleUpdateTab">Update Tab</h4>
             <form id="update-tab" class="update-tab-panel">
               <fieldset>
-                <input type="text" class="modal-field" name="tab[date]" placeholder="Date">
-                <input type="text" class="modal-field" name="tab[project_name]" placeholder="Project Name">
-                <input type="text" class="modal-field" name="tab[task]" placeholder="Task">
-                <input type="number" class="modal-field" name="tab[time_spent]" placeholder="Time (in minutes)">
-                <input type="text" class="modal-field" name="tab[notes]" placeholder="Notes">
-                <input type="submit" class="form-button" value="submit">
+                <input type="text" class="modal-field" id="modal-field-date" name="tab[date]" placeholder="Date">
+                <input type="text" class="modal-field" id="modal-field-project-name" name="tab[project_name]" placeholder="Project Name">
+                <input type="text" class="modal-field" id="modal-field-task" name="tab[task]" placeholder="Task">
+                <input type="number" class="modal-field" id="modal-field-time-spent" name="tab[time_spent]" placeholder="Time (in minutes)">
+                <input type="text" class="modal-field" id="modal-field-notes" name="tab[notes]" placeholder="Notes">
+                <input type="submit" class="form-button" id="modal-field" value="submit">
               </fieldset>
             </form>
           </div>

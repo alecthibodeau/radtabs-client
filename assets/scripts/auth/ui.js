@@ -1,8 +1,6 @@
 'use strict'
 
 const store = require('../store')
-// const gameEvents = require('../game/ui.js')
-// const boardEvents = require('../game/events.js')
 
 const signUpSuccess = function (data) {
   $('#modalTitleSignUp').text('Signed up successfully').css('color', '#9ac479')

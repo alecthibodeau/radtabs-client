@@ -4,8 +4,6 @@ const store = require('../store')
 
 // This line connects my JS to my handlebars
 const showTabsTemplate = require('../templates/tab-listing.handlebars')
-// const api = require('./api.js')
-// const events = require('./events.js')
 
 const getTabsSuccess = (data) => {
   console.log(data)
@@ -26,7 +24,6 @@ const newTabSuccess = (data) => {
     $('#newTabModal').modal('hide')
     $('#modalTitleNewTab').text('New tab').css('color', '#fca778')
   }, store.successTimeout)
-  // events.onGetTabs(event)
 }
 
 const updateTabSuccess = (data) => {
