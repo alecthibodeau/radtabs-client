@@ -1,9 +1,6 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-// @import url('https://fonts.googleapis.com/css?family=Varela+Round');
-// @import url('https://fonts.googleapis.com/css?family=Monoton');
-// @import url('https://fonts.googleapis.com/css?family=Fredoka+One|Monoton');
 @import url('https://fonts.googleapis.com/css?family=Aldrich|Fredoka+One|Monoton|Varela+Round|Roboto|Audiowide');
 
 // Alec's mixes…
@@ -181,7 +178,7 @@ td {
 }
 
 .modal-title {
-  color: $orange-muted;
+  color: $blue-muted;
   font-family: 'Varela Round', sans-serif;
   font-size: 20px;
   margin-bottom: 5px;

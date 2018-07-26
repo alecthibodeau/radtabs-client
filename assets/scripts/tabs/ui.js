@@ -6,7 +6,7 @@ const store = require('../store')
 const showTabsTemplate = require('../templates/tab-listing.handlebars')
 
 const getTabsSuccess = (data) => {
-  console.log(data)
+  // console.log(data)
   const showTabsHtml = showTabsTemplate({ tabs: data.tabs })
   $('.info-section').show()
   $('.tab-return-content').html(showTabsHtml)

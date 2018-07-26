@@ -26,13 +26,10 @@ const onClearTabs = (event) => {
 const onNewTab = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // $('.modal-field').on('hidden.bs.modal', function () {
-  //   $(this).find('form')[0].reset()
-  // })
   api.newTab(data)
     .then(ui.newTabSuccess(data))
     .then(getTabs)
-    .catch(ui.newTabFailure)
+    .catch(ui.failure)
 }
 
 const saveTab = (event) => {
@@ -45,18 +42,17 @@ const saveTab = (event) => {
     time_spent: $(event.target).closest('tr').attr('data-time_spent'),
     notes: $(event.target).closest('tr').attr('data-notes')
   }
-  console.log(`tab id from Object is ${store.tab.tab_id}`)
-  console.log(`tab date from Object is ${store.tab.date}`)
-  console.log(`tab project from Object is ${store.tab.project_name}`)
-  console.log(`tab task from Object is ${store.tab.task}`)
-  console.log(`tab minutes from Object is ${store.tab.time_spent}`)
-  console.log(`tab notes from Object is ${store.tab.notes}`)
+  // console.log(`tab id from Object is ${store.tab.tab_id}`)
+  // console.log(`tab date from Object is ${store.tab.date}`)
+  // console.log(`tab project from Object is ${store.tab.project_name}`)
+  // console.log(`tab task from Object is ${store.tab.task}`)
+  // console.log(`tab minutes from Object is ${store.tab.time_spent}`)
+  // console.log(`tab notes from Object is ${store.tab.notes}`)
   fillField()
 }
 
 const fillField = () => {
   // Reset form fields on launch of Update Tab modal…
-  console.log(`tab date from Function is ${store.tab.date}`)
   $('#modal-field-date').val(store.tab.date)
   $('#modal-field-project-name').val(store.tab.project_name)
   $('#modal-field-task').val(store.tab.task)
@@ -71,11 +67,10 @@ const onUpdateTab = (event) => {
   api.updateTab(data, store.tab.tab_id)
     .then(ui.updateTabSuccess)
     .then(getTabs)
-    .catch(ui.updateTabFailure)
+    .catch(ui.failure)
 }
 
 const onDeleteTab = (event) => {
-  console.log('Delete Tab function starts')
   event.preventDefault()
   // closest is a handlebar method that will look for the closest tr and target the data-id
   const tabId = $(event.target).closest('tr').attr('data-id')
@@ -93,13 +88,6 @@ const addTabHandlers = () => {
   $('#update-tab').on('submit', onUpdateTab)
   $('.tab-return-content').on('click', '#update-button', saveTab)
   $('.tab-return-content').on('click', '#delete-button', onDeleteTab)
-
-  // $('.tab-return-content').on('click', '#update-button', function () {
-  //   $('#modal-field-date').find('input[type="text"],textarea,select').each(function () {
-  //     console.log(`tab date from Object is ${store.tab.date}`)
-  //     this.value = store.tab.date
-  //   })
-  // })
 }
 
 module.exports = {
