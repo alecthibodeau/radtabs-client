@@ -27,6 +27,7 @@ const newTabSuccess = (data) => {
     // $('.modal-title').removeClass('success-message')
     $('#modalTitleNewTab').text('New tab')
     store.defaultMessageColor()
+    $('#new-tab').show()
   }, store.successTimeout)
 }
 
@@ -39,6 +40,7 @@ const updateTabSuccess = (data) => {
     $('#updateTabModal').modal('hide')
     $('#modalTitleUpdateTab').text('Update tab')
     store.defaultMessageColor()
+    $('#update-tab').show()
   }, store.successTimeout)
 }
 
