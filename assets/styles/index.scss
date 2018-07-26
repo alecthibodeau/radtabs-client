@@ -17,9 +17,10 @@ $red: #f00;
 $green: #0f0;
 $blue: #00f;
 $red-muted: rgba(246, 65, 84, 1);
-$green-muted: rgba(119, 225, 131, 1);
+$green-muted: rgba(119, 210, 131, 1);
 $blue-muted: rgba(112, 115, 255, 1);
-$yellow-muted: rgba(255, 220, 100, 1);
+$yellow-muted: rgba(255, 230, 100, 1);
+$orange-muted: rgba(255, 150, 0, 1);
 
 $cyan: #0ff;
 $magenta: #f0f;
@@ -45,7 +46,7 @@ main {
 }
 
 header {
-  display: fixed;
+  // display: fixed;
   margin: 40 auto;
   max-width: 800px;
   overflow: auto;
@@ -91,7 +92,7 @@ header {
 .nav-bar,
 .intro-bar {
   // align-content: center; Note: this property has no effect when there is only one line of flex items.
-  background-color: $red-muted;
+  background-color: $orange-muted;
   border-radius: 10px;
   display: flex;
   flex-direction: row;
@@ -130,42 +131,34 @@ header {
 
 .info-section {
   display: relative;
-  left: 25px;
+  margin: 0 auto;
   max-width: 800px;
   position: relative;
 }
 
-.table-headers {
-  margin: 0 auto;
-  width: 100%;
-}
-
-.tab-return-content {
-  margin: 0 auto;
-  width: 100%;
+th {
+  color: $green-muted;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 20px;
+  text-align: right;
+  text-transform: uppercase;
+  vertical-align: top;
+  width: 80px;
 }
 
 td {
-  display: table-cell;
+  color: $lines-brown;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 15px;
+  padding: 2px 20px;
+  text-align: right;
   vertical-align: top;
   width: 80px;
-
-  &.header-td {
-    color: $rainbow-orange;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  &.info-td {
-    color: $lines-brown;
-    font-family: 'Varela Round', sans-serif;
-    font-size: 15px;
-    // font-weight: bold;
-  }
 }
 
-.row-button { // The style for update and delete buttons
+.update-button {
   background-color: $blue-muted;
   border-radius: 5px;
   color: $cloud-white;
@@ -174,19 +167,21 @@ td {
   font-size: 10px;
   height: 20px;
   text-transform: uppercase;
-  // left: 4px;
-  // margin: 0 auto;
-  // padding: 3px;
-  // position: relative;
-  // text-align: center;
-  // top: -2px;
-  // user-select: none;
-  // vertical-align: baseline;
-  // width: 80px;
+}
+
+.delete-button {
+  background-color: $red-muted;
+  border-radius: 5px;
+  color: $cloud-white;
+  cursor: pointer;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 10px;
+  height: 20px;
+  text-transform: uppercase;
 }
 
 .modal-title {
-  color: $rainbow-orange;
+  color: $orange-muted;
   font-family: 'Varela Round', sans-serif;
   font-size: 20px;
   margin-bottom: 5px;
@@ -194,6 +189,14 @@ td {
   text-align: center;
   text-transform: uppercase;
   user-select: none;
+
+  &.success-message {
+    color: $green-muted;
+  }
+
+  &.error-message {
+    color: $red-muted;
+  }
 }
 
 fieldset {
@@ -215,7 +218,7 @@ input {
 }
 
 .form-button {
-  background-color: $rainbow-yellow;
+  background-color: $yellow-muted;
   border: 0;
   border-radius: 5px;
   color: $lines-brown;
