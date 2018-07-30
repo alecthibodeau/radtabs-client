@@ -82,7 +82,7 @@ const changePasswordFailure = function (error) {
   console.log('changePasswordFailure ran. Error is :', error)
 }
 
-const signOutSuccess = function (animateGameBoard, onClickResetSession, onClickCell) {
+const signOutSuccess = function (data) {
   $('#modalTitleSignOut').text('Signed out successfully')
   store.successMessageColor()
   $('#nav-sign-up').show()
