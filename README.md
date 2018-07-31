@@ -29,7 +29,7 @@ With the RadTabs website I can quickly and easily track my work. I call the data
 
 ## Features
 
-Users of RadTabs can create an account from an email address and password, then sign-in with this account to start recording tabs for their work – data that is privately accessible to each indivdual user. Users can create, read, update and delete any tab. When a user signs out all tabs becomes hidden and remain private.
+Users of RadTabs can create an account from an email address and password, then sign-in with this account to start recording tabs for their work – data that is privately accessible to each individual user. Users can create, read, update and delete any tab. When a user signs out all tabs becomes hidden and remain private.
 
 ## User Stories
 
