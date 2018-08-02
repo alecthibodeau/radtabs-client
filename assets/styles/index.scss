@@ -127,10 +127,15 @@ header {
 }
 
 .info-section {
-  // display: relative;
-  // margin: 0 auto;
-  max-width: 780px;
+  background-color: $green;
+  margin: 0 auto;
+  max-width: 800px;
   position: relative;
+}
+
+table {
+  position: relative;
+  right: 20px;
 }
 
 th {
