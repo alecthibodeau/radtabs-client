@@ -134,7 +134,8 @@ header {
 
 table {
   position: relative;
-  right: 2%;
+  // right: 2%;
+  width: 100%;
 }
 
 th {
@@ -153,10 +154,28 @@ td {
   color: $lines-brown;
   font-family: 'Varela Round', sans-serif;
   font-size: 15px;
+  max-height: 20px;
+  max-width: 80px;
+  overflow: hidden;
   padding: 2px 20px;
+  position: relative;
   text-align: right;
+  text-overflow: ellipsis;
   vertical-align: top;
-  width: 80px;
+  white-space: nowrap;
+  z-index: 1;
+
+  &:hover:not(.info-button) {
+    background-color: $green-muted;
+    cursor: default;
+    min-height: 10vw;
+    min-width: 10vw;
+    opacity: 1;
+    overflow: visible;
+    position: absolute;
+    white-space: normal;
+    z-index: 2;
+  }
 }
 
 .update-button {
