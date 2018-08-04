@@ -18,13 +18,11 @@ const clearTabs = () => {
 }
 
 const newTabSuccess = (data) => {
-  // console.log(data)
   $('#modalTitleNewTab').text('New tab created')
   $('#new-tab').slideToggle(200)
   store.successMessageColor()
   setTimeout(function () {
     $('#newTabModal').modal('hide')
-    // $('.modal-title').removeClass('success-message')
     $('#modalTitleNewTab').text('New tab')
     store.defaultMessageColor()
     $('#new-tab').show()
@@ -32,7 +30,6 @@ const newTabSuccess = (data) => {
 }
 
 const updateTabSuccess = (data) => {
-  // console.log(data)
   $('#modalTitleUpdateTab').text('Tab updated')
   $('#update-tab').slideToggle(200)
   store.successMessageColor()
@@ -44,6 +41,16 @@ const updateTabSuccess = (data) => {
   }, store.successTimeout)
 }
 
+const deleteTabSuccess = (data) => {
+  $('#modalTitleDeleteTab').removeClass('modal-title-red').text('Tab deleted')
+  store.successMessageColor()
+  setTimeout(function () {
+    $('#deleteTabModal').modal('hide')
+    $('#modalTitleDeleteTab').text('Delete tab?')
+    store.defaultMessageColor()
+  }, store.successTimeout)
+}
+
 const failure = (error) => {
   console.error(error)
 }
@@ -51,6 +58,7 @@ const failure = (error) => {
 module.exports = {
   newTabSuccess,
   updateTabSuccess,
+  deleteTabSuccess,
   getTabsSuccess,
   clearTabs,
   failure

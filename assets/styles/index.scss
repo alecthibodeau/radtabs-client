@@ -210,11 +210,12 @@ td {
   text-transform: uppercase;
   user-select: none;
 
-  &.success-message {
+  &.modal-title-green {
     color: $green-muted;
   }
 
-  &.error-message {
+  &.modal-title-red,
+  .delete-title {
     color: $red-muted;
   }
 }

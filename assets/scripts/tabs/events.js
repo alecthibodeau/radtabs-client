@@ -74,30 +74,24 @@ const onUpdateTab = (event) => {
 const onDeleteTab = (event) => {
   event.preventDefault()
   // closest is a handlebar method that will look for the closest tr and target the data-id
-  const tabId = $(event.target).closest('tr').attr('data-id')
-  api.deleteTab(tabId)
+  // const tabId = $(event.target).closest('tr').attr('data-id')
+  api.deleteTab(store.tab.tab_id)
+    .then(ui.deleteTabSuccess)
     .then(() => onGetTabs(event))
     .catch(ui.failure)
 }
 
 const addTabHandlers = () => {
-  $('.tab-return-content').on('mouseover', '.info-td', function (event) {
-    // console.log('Hi')
-    // $(this).css('background-color', 'red')
-    saveTab(event)
+  $('.tab-return-content').on('click', saveTab).on('mouseover', '.info-td', (event) => {
     $(this).css('cursor', 'pointer')
-    // $('#updateTabModal').show()
-    // $('#updateTabModal').show()
-  })
-  // $('.tab-return-content').on('mouseover', '.info-td', console.log('Hi'))
+  }).on('click', '#delete-button', () => { $('.modal-title').addClass('modal-title-red') })
   $('.info-section').hide()
   $('.nav-bar').hide()
   $('#getTabsButton').on('click', onGetTabs)
   $('#clearTabsButton').on('click', onClearTabs)
   $('#new-tab').on('submit', onNewTab)
   $('#update-tab').on('submit', onUpdateTab)
-  $('.tab-return-content').on('click', '#update-button', saveTab)
-  $('.tab-return-content').on('click', '#delete-button', onDeleteTab)
+  $('#delete-tab').on('submit', onDeleteTab)
 }
 
 module.exports = {

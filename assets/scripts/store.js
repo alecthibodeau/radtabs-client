@@ -4,13 +4,13 @@ const store = {
   successTimeout: 1500,
   failureTimeout: 3000,
   successMessageColor: () => {
-    $('.modal-title').addClass('success-message')
+    $('.modal-title').addClass('modal-title-green')
   },
   errorMessageColor: () => {
-    $('.modal-title').addClass('error-message')
+    $('.modal-title').addClass('modal-title-red')
   },
   defaultMessageColor: () => {
-    $('.modal-title').removeClass('success-message').removeClass('error-message')
+    $('.modal-title').removeClass('modal-title-green').removeClass('modal-title-red')
   }
 }
 
