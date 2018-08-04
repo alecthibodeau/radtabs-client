@@ -10,6 +10,7 @@ const signUpSuccess = function (data) {
     $('#signUpModal').modal('hide')
     $('#modalTitleSignUp').text('Sign up')
     store.defaultMessageColor()
+    $('#signInModal').modal('show')
   }, store.successTimeout)
   // console.log('signUpSuccess ran. Data is :', data)
 }
