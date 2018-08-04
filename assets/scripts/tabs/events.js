@@ -53,6 +53,7 @@ const saveTab = (event) => {
 
 const fillField = () => {
   // Reset form fields on launch of Update Tab modal…
+  $('#update-tab').show()
   $('#modal-field-date').val(store.tab.date)
   $('#modal-field-project-name').val(store.tab.project_name)
   $('#modal-field-task').val(store.tab.task)
@@ -80,6 +81,15 @@ const onDeleteTab = (event) => {
 }
 
 const addTabHandlers = () => {
+  $('.tab-return-content').on('mouseover', '.info-td', function (event) {
+    // console.log('Hi')
+    // $(this).css('background-color', 'red')
+    saveTab(event)
+    $(this).css('cursor', 'pointer')
+    // $('#updateTabModal').show()
+    // $('#updateTabModal').show()
+  })
+  // $('.tab-return-content').on('mouseover', '.info-td', console.log('Hi'))
   $('.info-section').hide()
   $('.nav-bar').hide()
   $('#getTabsButton').on('click', onGetTabs)

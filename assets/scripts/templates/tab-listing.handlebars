@@ -7,37 +7,36 @@
     data-project_name="{{tab.project_name}}"
     data-task="{{tab.task}}"
     data-time_spent="{{tab.time_spent}}"
-    data-notes="{{tab.notes}}"
-    >
-    <td class="info-td">
+    data-notes="{{tab.notes}}">
+    <td class="info-td" data-toggle="modal" data-target="#updateTabModal">
       {{#if tab.date}}
         {{tab.date}}
       {{else}}
         —
       {{/if}}
     </td>
-    <td class="info-td">
+    <td class="info-td" data-toggle="modal" data-target="#updateTabModal">
       {{#if tab.project_name}}
         {{tab.project_name}}
       {{else}}
         —
       {{/if}}
     </td>
-    <td class="info-td">
+    <td class="info-td" data-toggle="modal" data-target="#updateTabModal">
       {{#if tab.task}}
         {{tab.task}}
       {{else}}
         —
       {{/if}}
     </td>
-    <td class="info-td">
+    <td class="info-td" data-toggle="modal" data-target="#updateTabModal">
       {{#if tab.time_spent}}
         {{tab.time_spent}}
       {{else}}
         —
       {{/if}}
     </td>
-    <td class="info-td">
+    <td class="info-td" data-toggle="modal" data-target="#updateTabModal">
       {{#if tab.notes}}
         {{tab.notes}}
       {{else}}

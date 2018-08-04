@@ -165,17 +165,17 @@ td {
   white-space: nowrap;
   z-index: 1;
 
-  &:hover:not(.info-button) {
-    background-color: $green-muted;
-    cursor: default;
-    min-height: 10vw;
-    min-width: 10vw;
-    opacity: 1;
-    overflow: visible;
-    position: absolute;
-    white-space: normal;
-    z-index: 2;
-  }
+  // &:hover:not(.info-button) {
+  //   background-color: $green-muted;
+  //   cursor: default;
+  //   min-height: 10vw;
+  //   min-width: 10vw;
+  //   opacity: 1;
+  //   overflow: visible;
+  //   position: absolute;
+  //   white-space: normal;
+  //   z-index: 2;
+  // }
 }
 
 .update-button {
