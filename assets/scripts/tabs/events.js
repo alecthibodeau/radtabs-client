@@ -84,7 +84,7 @@ const onDeleteTab = (event) => {
 const addTabHandlers = () => {
   $('.tab-return-content').on('click', saveTab).on('mouseover', '.info-td', (event) => {
     $(this).css('cursor', 'pointer')
-  }).on('click', '#delete-button', () => { $('.modal-title').addClass('modal-title-red') })
+  })
   $('.info-section').hide()
   $('.nav-bar').hide()
   $('#getTabsButton').on('click', onGetTabs)
