@@ -24,22 +24,19 @@
           </div>
         </header>
 
-      <!-- nav section -->
-        <section class="nav-area">
-          <!-- intro bar -->
-          <div class="intro-bar">
-            <input class="tab-button" id="nav-sign-up" value="sign up" type="button" data-toggle="modal" data-target="#signUpModal">
-            <input class="tab-button" id="nav-sign-in" value="sign in" type="button" data-toggle="modal" data-target="#signInModal">
-          </div>
-          <!-- nav bar -->
-          <div class="nav-bar">
-            <button class="tab-button" id="getTabsButton">Show Tabs</button>
-            <button class="tab-button" id="clearTabsButton">Hide Tabs</button>
-            <input class="tab-button" id="nav-new-tab" value="new tab" type="button" data-toggle="modal" data-target="#newTabModal">
-            <input class="tab-button" id="nav-change-password" value="change password" type="button" data-toggle="modal" data-target="#changePasswordModal">
-            <input class="tab-button" id="nav-sign-out" value="sign out" type="button" data-toggle="modal" data-target="#signOutModal">
-          </div>
-        </section>
+        <!-- intro bar -->
+        <div class="intro-bar">
+          <button class="nav-button" id="nav-sign-up" data-toggle="modal" data-target="#signUpModal">sign up</button>
+          <button class="nav-button" id="nav-sign-in" data-toggle="modal" data-target="#signInModal">sign in</button>
+        </div>
+        <!-- nav bar -->
+        <div class="nav-bar">
+          <button class="nav-button" id="getTabsButton">show tabs</button>
+          <button class="nav-button" id="clearTabsButton">hide tabs</button>
+          <button class="nav-button" id="nav-new-tab" data-toggle="modal" data-target="#newTabModal">new tab</button>
+          <button class="nav-button" id="nav-change-password" data-toggle="modal" data-target="#changePasswordModal">change password</button>
+          <button class="nav-button" id="nav-sign-out" data-toggle="modal" data-target="#signOutModal">sign out</button>
+        </div>
 
         <!-- info section -->
         <section class="info-section">
@@ -51,8 +48,7 @@
                   <th class="header-td">Task</th>
                   <th class="header-td">Minutes</th>
                   <th class="header-td">Notes</th>
-                  <th class="header-td">Update</th>
-                  <th class="header-td">Delete</th>
+                  <th class="header-td">Modify</th>
                 </tr>
               </thead>
               <tfoot>
@@ -141,7 +137,7 @@
       <!-- New Tab Modal Ends -->
 
       <!-- Update Tab Modal Begins -->
-      <div class="modal fade" id="updateTabModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <!-- <div class="modal fade" id="updateTabModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -158,11 +154,11 @@
             </form>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Update Tab Modal Ends -->
 
       <!-- Delete Tab Modal Begins -->
-      <div class="modal fade" id="deleteTabModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <!-- <div class="modal fade" id="deleteTabModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -174,8 +170,34 @@
             </form>
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- Delete Tab Modal Ends -->
+
+      <!-- Modify Tab Modal Begins -->
+      <div class="modal fade" id="modifyTabModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modalTitleModifyTab">Modify Tab</h4>
+            <form id="update-tab" class="update-tab-panel">
+              <fieldset>
+                <input type="text" class="modal-field" id="modal-field-date" name="tab[date]" placeholder="Date">
+                <input type="text" class="modal-field" id="modal-field-project-name" name="tab[project_name]" placeholder="Project Name">
+                <input type="text" class="modal-field" id="modal-field-task" name="tab[task]" placeholder="Task">
+                <input type="number" class="modal-field" id="modal-field-time-spent" name="tab[time_spent]" placeholder="Time (in minutes)">
+                <input type="text" class="modal-field" id="modal-field-notes" name="tab[notes]" placeholder="Notes">
+                <input type="submit" class="form-button" value="update tab">
+              </fieldset>
+            </form>
+            <form id="delete-tab" class="delete-tab-panel">
+              <fieldset>
+                <input type="submit" class="form-button" value="delete tab">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Modify Tab Modal Ends -->
 
       <!-- Sign Out Modal Begins -->
       <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

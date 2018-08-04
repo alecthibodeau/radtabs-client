@@ -29,26 +29,40 @@ const newTabSuccess = (data) => {
   }, store.successTimeout)
 }
 
-const updateTabSuccess = (data) => {
-  $('#modalTitleUpdateTab').text('Tab updated')
-  $('#update-tab').slideToggle(200)
+// const updateTabSuccess = (data) => {
+//   $('#modalTitleModifyTab').text('Tab updated')
+//
+//   $('#modify-tab').slideToggle(200)
+//   store.successMessageColor()
+//   setTimeout(function () {
+//     $('#updateTabModal').modal('hide')
+//     $('#modalTitleUpdateTab').text('Modify tab')
+//     store.defaultMessageColor()
+//     $('#update-tab').show()
+//   }, store.successTimeout)
+// }
+
+const successfulModification = () => {
   store.successMessageColor()
+  $('#update-tab').slideToggle(200)
+  $('#delete-tab').slideToggle(200)
   setTimeout(function () {
-    $('#updateTabModal').modal('hide')
-    $('#modalTitleUpdateTab').text('Update tab')
+    $('#modifyTabModal').modal('hide')
+    $('#modalTitleModifyTab').text('Modify tab')
     store.defaultMessageColor()
-    $('#update-tab').show()
+    $('#modify-tab').show()
+    $('#delete-tab').show()
   }, store.successTimeout)
 }
 
+const updateTabSuccess = (data) => {
+  $('#modalTitleModifyTab').text('Tab updated')
+  successfulModification()
+}
+
 const deleteTabSuccess = (data) => {
-  $('#modalTitleDeleteTab').removeClass('modal-title-red').text('Tab deleted')
-  store.successMessageColor()
-  setTimeout(function () {
-    $('#deleteTabModal').modal('hide')
-    $('#modalTitleDeleteTab').text('Delete tab?')
-    store.defaultMessageColor()
-  }, store.successTimeout)
+  $('#modalTitleModifyTab').text('Tab deleted')
+  successfulModification()
 }
 
 const failure = (error) => {

@@ -8,43 +8,42 @@
     data-task="{{tab.task}}"
     data-time_spent="{{tab.time_spent}}"
     data-notes="{{tab.notes}}">
-    <td class="info-td" data-toggle="modal" data-target="#updateTabModal">
+    <td class="info-td" data-toggle="modal" data-target="#modifyTabModal">
       {{#if tab.date}}
         {{tab.date}}
       {{else}}
         —
       {{/if}}
     </td>
-    <td class="info-td" data-toggle="modal" data-target="#updateTabModal">
+    <td class="info-td" data-toggle="modal" data-target="#modifyTabModal">
       {{#if tab.project_name}}
         {{tab.project_name}}
       {{else}}
         —
       {{/if}}
     </td>
-    <td class="info-td" data-toggle="modal" data-target="#updateTabModal">
+    <td class="info-td" data-toggle="modal" data-target="#modifyTabModal">
       {{#if tab.task}}
         {{tab.task}}
       {{else}}
         —
       {{/if}}
     </td>
-    <td class="info-td" data-toggle="modal" data-target="#updateTabModal">
+    <td class="info-td" data-toggle="modal" data-target="#modifyTabModal">
       {{#if tab.time_spent}}
         {{tab.time_spent}}
       {{else}}
         —
       {{/if}}
     </td>
-    <td class="info-td" data-toggle="modal" data-target="#updateTabModal">
+    <td class="info-td" data-toggle="modal" data-target="#modifyTabModal">
       {{#if tab.notes}}
         {{tab.notes}}
       {{else}}
         —
       {{/if}}
     </td>
-    <td class="info-button"><button type="button" class="update-button" id="update-button" data-toggle="modal" data-target="#updateTabModal">Update</td>
-    <td class="info-button"><button type="button" class="delete-button" id="delete-button" data-toggle="modal" data-target="#deleteTabModal">Delete</td>
+    <td class="info-button"><button type="button" class="modify-tab-button" id="modify-tab-button" data-toggle="modal" data-target="#modifyTabModal">Modify</button></td>
   </tr>
 
 {{/each}}
