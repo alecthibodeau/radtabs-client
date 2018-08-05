@@ -13,8 +13,6 @@ const getTabs = function () {
 }
 
 const newTab = function (data) {
-  // console.log(store.user.id)
-  // console.log(store.user.email)
   return $.ajax({
     url: config.apiUrl + '/tabs',
     method: 'POST',
@@ -22,13 +20,10 @@ const newTab = function (data) {
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
-    //, data: JSON.stringify(data)
   })
 }
 
 const updateTab = (data, tabId) => {
-  // console.log(store.user.id)
-  // console.log(store.user.email)
   return $.ajax({
     url: config.apiUrl + '/tabs/' + tabId,
     method: 'PATCH',
@@ -36,16 +31,13 @@ const updateTab = (data, tabId) => {
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
-    //, data: JSON.stringify(data)
   })
 }
 
-// Added the structure of this new function during Handlebars lesson…
 const deleteTab = (tabId) => {
   return $.ajax({
     url: config.apiUrl + '/tabs/' + tabId,
     method: 'DELETE',
-    // Auth code from game project…
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

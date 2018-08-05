@@ -12,17 +12,14 @@ const signUpSuccess = function (data) {
     store.defaultMessageColor()
     $('#signInModal').modal('show')
   }, store.successTimeout)
-  // console.log('signUpSuccess ran. Data is :', data)
 }
 
 const signUpFailure = function (error) {
   $('#modalTitleSignUp').text('Error on sign up. Try again')
   store.errorMessageColor()
   setTimeout(function () {
-    // $('#signUpModal').modal('hide')
     $('#modalTitleSignUp').text('Sign up')
     store.defaultMessageColor()
-    // $('#sign-up').show()
   }, store.failureTimeout)
   console.log('signUpFailure ran. Error is :', error)
 }
@@ -41,7 +38,6 @@ const signInSuccess = function (data) {
     $('#sign-in').show()
     store.defaultMessageColor()
   }, store.successTimeout)
-  // console.log('signInSuccess ran. Data is :', data)
   // store is an empty object: store = {}. We'll fill it with information. See store.js
   store.user = data.user
 }
@@ -50,10 +46,8 @@ const signInFailure = function (error) {
   $('#modalTitleSignIn').text('Error on sign in. Try again.')
   store.errorMessageColor()
   setTimeout(function () {
-    // $('#signInModal').modal('hide')
     $('#modalTitleSignIn').text('Sign in')
     store.defaultMessageColor()
-    // $('#sign-in').show()
   }, store.failureTimeout)
   console.log('signInFailure ran. Error is :', error)
 }
@@ -68,17 +62,14 @@ const changePasswordSuccess = function (data) {
     store.defaultMessageColor()
     $('#change-password').show()
   }, store.successTimeout)
-  // console.log('changePasswordSuccess ran and nothing was returned :', data)
 }
 
 const changePasswordFailure = function (error) {
   $('#modalTitleChangePassword').text('Error on change password. Try again.')
   store.errorMessageColor()
   setTimeout(function () {
-    // $('#changePasswordModal').modal('hide')
     $('#modalTitleChangePassword').text('Change password')
     store.defaultMessageColor()
-    // $('#change-password').show(1)
   }, store.failureTimeout)
   console.log('changePasswordFailure ran. Error is :', error)
 }
@@ -91,13 +82,13 @@ const signOutSuccess = function (data) {
   $('.info-section').hide()
   $('.nav-bar').hide()
   $('.intro-bar').show()
+  store.showHideCounter = 0
 
   setTimeout(function () {
     $('#signOutModal').modal('hide')
     $('#modalTitleSignOut').text('Sign out')
     store.defaultMessageColor()
   }, store.successTimeout)
-  // console.log('signOutSuccess ran and nothing was returned!')
   store.user = null
 }
 

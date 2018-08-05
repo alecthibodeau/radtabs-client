@@ -1,10 +1,8 @@
 'use strict'
 
 const getFormFields = require('../../../lib/get-form-fields')
-
 const api = require('./api.js')
 const ui = require('./ui.js')
-
 const store = require('../store')
 
 const getTabs = () => {
@@ -42,12 +40,6 @@ const saveTab = (event) => {
     time_spent: $(event.target).closest('tr').attr('data-time_spent'),
     notes: $(event.target).closest('tr').attr('data-notes')
   }
-  // console.log(`tab id from Object is ${store.tab.tab_id}`)
-  // console.log(`tab date from Object is ${store.tab.date}`)
-  // console.log(`tab project from Object is ${store.tab.project_name}`)
-  // console.log(`tab task from Object is ${store.tab.task}`)
-  // console.log(`tab minutes from Object is ${store.tab.time_spent}`)
-  // console.log(`tab notes from Object is ${store.tab.notes}`)
   fillField()
 }
 
@@ -73,8 +65,6 @@ const onUpdateTab = (event) => {
 
 const onDeleteTab = (event) => {
   event.preventDefault()
-  // closest is a handlebar method that will look for the closest tr and target the data-id
-  // const tabId = $(event.target).closest('tr').attr('data-id')
   api.deleteTab(store.tab.tab_id)
     .then(ui.deleteTabSuccess)
     .then(() => onGetTabs(event))
@@ -85,10 +75,12 @@ const addTabHandlers = () => {
   $('.tab-return-content').on('click', saveTab).on('mouseover', '.info-td', (event) => {
     $(this).css('cursor', 'pointer')
   })
+  $('#showHideTabsButton').click((event) => {
+    store.showHideCounter % 2 === 0 ? onGetTabs(event) : onClearTabs(event)
+    store.showHideCounter++
+  })
   $('.info-section').hide()
   $('.nav-bar').hide()
-  $('#getTabsButton').on('click', onGetTabs)
-  $('#clearTabsButton').on('click', onClearTabs)
   $('#new-tab').on('submit', onNewTab)
   $('#update-tab').on('submit', onUpdateTab)
   $('#delete-tab').on('submit', onDeleteTab)

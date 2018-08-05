@@ -6,7 +6,6 @@ const store = require('../store')
 const showTabsTemplate = require('../templates/tab-listing.handlebars')
 
 const getTabsSuccess = (data) => {
-  // console.log(data)
   const showTabsHtml = showTabsTemplate({ tabs: data.tabs })
   $('.info-section').show()
   $('.tab-return-content').html(showTabsHtml)
@@ -28,19 +27,6 @@ const newTabSuccess = (data) => {
     $('#new-tab').show()
   }, store.successTimeout)
 }
-
-// const updateTabSuccess = (data) => {
-//   $('#modalTitleModifyTab').text('Tab updated')
-//
-//   $('#modify-tab').slideToggle(200)
-//   store.successMessageColor()
-//   setTimeout(function () {
-//     $('#updateTabModal').modal('hide')
-//     $('#modalTitleUpdateTab').text('Modify tab')
-//     store.defaultMessageColor()
-//     $('#update-tab').show()
-//   }, store.successTimeout)
-// }
 
 const successfulModification = () => {
   store.successMessageColor()
