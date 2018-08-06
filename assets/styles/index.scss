@@ -13,7 +13,12 @@ $orange-muted: rgb(255, 150, 0);
 $sky-blue: #a7c5df;
 $cloud-white: #f7f0e3;
 $lines-brown: #3a2328;
+
+$red-amped: rgb(255, 38, 61);
+$green-amped: rgb(36, 214, 60);
+$blue-amped: rgb(38, 41, 255);
 $yellow-amped: rgb(255, 242, 0);
+
 $yellow: #ff0;
 
 main {
@@ -111,16 +116,28 @@ header {
     &.new-tab-form-button {
       background-color: $green-muted;
       color: $cloud-white;
+
+      &:hover {
+        background-color: $green-amped;
+      }
     }
 
     &.update-tab-form-button {
       background-color: $blue-muted;
       color: $cloud-white;
+
+      &:hover {
+        background-color: $blue-amped;
+      }
     }
 
     &.delete-tab-form-button {
       background-color: $red-muted;
       color: $cloud-white;
+
+      &:hover {
+        background-color: $red-amped;
+      }
     }
   }
 
@@ -128,7 +145,7 @@ header {
     outline: 0;
   }
 
-  &:hover {
+  &:hover:not(.new-tab-form-button):not(.update-tab-form-button):not(.delete-tab-form-button) {
     background-color: $yellow-amped;
   }
 }
@@ -192,6 +209,10 @@ td {
 
   &:focus {
     outline: 0;
+  }
+
+  &:hover {
+    background-color: $blue-amped;
   }
 }
 
