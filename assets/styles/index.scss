@@ -18,8 +18,8 @@ $red-amped: rgb(255, 38, 61);
 $green-amped: rgb(36, 214, 60);
 $blue-amped: rgb(38, 41, 255);
 $yellow-amped: rgb(255, 242, 0);
-
 $yellow: #ff0;
+$pale-blue: rgb(214, 255, 254);
 
 main {
   margin: 0 auto;
@@ -32,7 +32,7 @@ header {
   overflow: auto;
   padding: 8px;
   position: relative;
-  width: 80%;
+  width: 90%;
 }
 
 .radtabs-heading {
@@ -73,11 +73,11 @@ header {
   justify-content: center;
   margin: 0 auto;
   margin-top: 1%;
-  max-height: 60px;
+  // max-height: 120px;
   overflow: auto;
-  padding: 8px;
+  padding: 1%;
   position: relative;
-  width: 80%;
+  width: 90%;
 }
 
 // Various button styles…
@@ -96,7 +96,7 @@ header {
   font-size: 16px;
   letter-spacing: 0;
   margin: 0 8px 10px;
-  max-height: 60px;
+  max-height: 40%;
   max-width: 80%;
   padding: 3px 12px;
   position: relative;
@@ -163,7 +163,7 @@ table {
   margin: 0 auto;
   position: relative;
   vertical-align: top;
-  width: 80%;
+  width: 90%;
 }
 
 th {
@@ -251,8 +251,59 @@ input { // form input fields
   color: $green-muted;
   font-family: 'Varela Round', sans-serif;
   font-size: 12px;
-  margin: 20px auto;
+  margin: 5% auto;
   position: relative;
   text-align: center;
   text-transform: uppercase;
 }
+
+@media only screen and (max-width: 500px) {
+  .nav-bar,
+  .intro-bar {
+    flex-direction: column;
+    padding: 2%;
+  }
+
+  .nav-button,
+  .form-button,
+  .new-tab-form-button,
+  .update-tab-form-button,
+  .delete-tab-form-button {
+    // display: block;
+    flex-grow: 100%;
+    margin: 0 auto 3%;
+    max-width: 96%;
+    width: 100%;
+  }
+
+
+}
+
+@media only screen and (max-width: 850px) {
+  body {
+    background-color: $pale-blue;
+  }
+
+  // .nav-bar,
+  // .intro-bar {
+  //   max-height: 120px;
+  // }
+}
+
+// @media only screen and (max-width: 992px) {
+//   body {
+//     background-color: $pale-blue;
+//   }
+// .welcome h1 {
+//   font-size: 7em;
+// }
+//
+// footer {
+//   padding-top: 70px;
+// }
+//
+// h4 > a {
+//   font-size: 12px;
+//   margin: 5px;
+// }
+// }
