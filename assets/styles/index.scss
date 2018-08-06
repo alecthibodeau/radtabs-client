@@ -4,6 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import url('https://fonts.googleapis.com/css?family=Aldrich|Fredoka+One|Monoton|Varela+Round|Roboto|Audiowide');
 
 // Alec's mixes…
+$rainbow-yellow: #fbde84;
 $red-muted: rgb(246, 65, 84);
 $green-muted: rgb(119, 210, 131);
 $blue-muted: rgb(112, 115, 255);
@@ -12,6 +13,8 @@ $orange-muted: rgb(255, 150, 0);
 $sky-blue: #a7c5df;
 $cloud-white: #f7f0e3;
 $lines-brown: #3a2328;
+$yellow-amped: rgb(255, 242, 0);
+$yellow: #ff0;
 
 main {
   margin: 0 auto;
@@ -123,6 +126,10 @@ header {
 
   &:focus {
     outline: 0;
+  }
+
+  &:hover {
+    background-color: $yellow-amped;
   }
 }
 
