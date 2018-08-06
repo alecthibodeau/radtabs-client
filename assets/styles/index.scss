@@ -19,7 +19,7 @@ $green-amped: rgb(36, 214, 60);
 $blue-amped: rgb(38, 41, 255);
 $yellow-amped: rgb(255, 242, 0);
 $yellow: #ff0;
-$pale-blue: rgb(214, 255, 254);
+$pale-blue: rgb(219, 255, 254);
 
 main {
   margin: 0 auto;
@@ -27,40 +27,40 @@ main {
 }
 
 header {
-  // display: fixed;
   margin: 0 auto;
-  overflow: auto;
-  padding: 8px;
   position: relative;
   width: 90%;
 }
 
 .radtabs-heading {
+  // background-color: $pale-blue;
+  bottom: 8px;
   color: $green-muted;
   float: left;
   font-family: 'Audiowide', sans-serif;
   font-size: 42px;
-  margin: 0 20px -10px 5px;
+  margin: 0 3% 0 0;
   position: relative;
-  right: 8px;
   text-transform: uppercase;
+  z-index: 1;
 
   & .tabs-heading {
     color: $blue-muted;
   }
 }
 
+.first-sentence {
+  // background-color: $pale-blue;
+  color: $red-muted;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 24px;
+}
+
 .radtabs-text {
   color: $lines-brown;
   font-family: 'Varela Round', sans-serif;
   font-size: 18px;
-  position: relative;
-  top: 8px;
-
-  & .first-sentence {
-    color: $red-muted;
-    font-size: 24px;
-  }
+  margin-bottom: 1%;
 }
 
 .nav-bar,
@@ -72,8 +72,7 @@ header {
   flex-direction: row;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 1%;
-  // max-height: 120px;
+  // margin-top: 1%;
   overflow: auto;
   padding: 1%;
   position: relative;
@@ -151,7 +150,6 @@ header {
 }
 
 .info-section {
-  // background-color: $blue-muted-light;
   margin: 0 auto;
   max-width: 100%;
   position: relative;
@@ -159,7 +157,6 @@ header {
 }
 
 table {
-  // float: left;
   margin: 0 auto;
   position: relative;
   vertical-align: top;
@@ -177,7 +174,6 @@ th {
   text-align: right;
   text-transform: uppercase;
   vertical-align: top;
-  // user-select: none;
 }
 
 td {
@@ -269,41 +265,22 @@ input { // form input fields
   .new-tab-form-button,
   .update-tab-form-button,
   .delete-tab-form-button {
-    // display: block;
     flex-grow: 100%;
     margin: 0 auto 3%;
-    max-width: 96%;
+    max-width: 97%;
     width: 100%;
   }
 
-
-}
-
-@media only screen and (max-width: 850px) {
-  body {
-    background-color: $pale-blue;
+  .radtabs-heading {
+    float: none;
   }
 
-  // .nav-bar,
-  // .intro-bar {
-  //   max-height: 120px;
-  // }
-}
+  .first-sentence {
+    bottom: 2vh;
+    position: relative;
+  }
 
-// @media only screen and (max-width: 992px) {
-//   body {
-//     background-color: $pale-blue;
-//   }
-// .welcome h1 {
-//   font-size: 7em;
-// }
-//
-// footer {
-//   padding-top: 70px;
-// }
-//
-// h4 > a {
-//   font-size: 12px;
-//   margin: 5px;
-// }
-// }
+  .radtabs-text {
+    display: none;
+  }
+}
