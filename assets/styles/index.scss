@@ -274,11 +274,15 @@ input { // form input fields
 
   .radtabs-heading {
     float: none;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .first-sentence {
     bottom: 2vh;
+    margin: 0 auto;
     position: relative;
+    text-align: center;
   }
 
   .radtabs-text {
