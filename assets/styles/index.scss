@@ -185,7 +185,7 @@ td {
   // max-height: 20px;
   max-width: 80px;
   overflow: hidden;
-  padding: 2px 20px;
+  padding: 2px 15px;
   position: relative;
   text-align: right;
   text-overflow: ellipsis;
@@ -282,6 +282,14 @@ input { // form input fields
   th {
     font-size: 16px;
   }
+
+  .notes-th {
+    display: none;
+  }
+
+  .notes-td {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -292,14 +300,26 @@ input { // form input fields
   }
 
   th {
-    font-size: 11px;
+    // font-size: 11px;
     max-width: 60px;
     padding: 5px;
+  }
+
+  .task-th,
+  .time-spent-th,
+  .notes-th {
+    display: none;
   }
 
   td {
     max-width: 60px;
     padding: 2px 5px;
+  }
+
+  .task-td,
+  .time-spent-td,
+  .notes-td {
+    display: none;
   }
 
   .nav-button,
