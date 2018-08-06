@@ -55,13 +55,15 @@ header {
   color: $red-muted;
   font-family: 'Varela Round', sans-serif;
   font-size: 24px;
+  position: relative;
 }
 
 .radtabs-text {
   color: $lines-brown;
   font-family: 'Varela Round', sans-serif;
   font-size: 18px;
-  margin-bottom: 1%;
+  margin-bottom: 2%;
+  position: relative;
 }
 
 .nav-bar,
@@ -73,7 +75,6 @@ header {
   flex-direction: row;
   justify-content: center;
   margin: 0 auto;
-  // margin-top: 1%;
   overflow: auto;
   padding: 1%;
   position: relative;
@@ -96,8 +97,6 @@ header {
   font-size: 16px;
   letter-spacing: 0;
   margin: 0 8px 10px;
-  max-height: 40%;
-  max-width: 80%;
   padding: 3px 12px;
   position: relative;
   text-transform: uppercase;
@@ -159,6 +158,7 @@ header {
 
 table {
   margin: 0 auto;
+  overflow: auto;
   position: relative;
   vertical-align: top;
   width: 90%;
@@ -254,11 +254,52 @@ input { // form input fields
   text-transform: uppercase;
 }
 
+@media only screen and (min-width: 737px) {
+  .nav-bar,
+  .intro-bar {
+    padding: 5px;
+  }
+
+  .nav-button {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .radtabs-heading {
+    float: none;
+  }
+
+  .first-sentence {
+    bottom: 2vh;
+    margin: 0 auto;
+  }
+
+  .radtabs-text {
+    bottom: 2vh;
+  }
+
+  th {
+    font-size: 16px;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .nav-bar,
   .intro-bar {
     flex-direction: column;
-    padding: 2%;
+    padding: 6px;
+  }
+
+  th {
+    font-size: 11px;
+    max-width: 60px;
+    padding: 5px;
+  }
+
+  td {
+    max-width: 60px;
+    padding: 2px 5px;
   }
 
   .nav-button,
@@ -281,7 +322,6 @@ input { // form input fields
   .first-sentence {
     bottom: 2vh;
     margin: 0 auto;
-    position: relative;
     text-align: center;
   }
 
