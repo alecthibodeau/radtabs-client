@@ -8,18 +8,17 @@ $rainbow-yellow: #fbde84;
 $red-muted: rgb(246, 65, 84);
 $green-muted: rgb(119, 210, 131);
 $blue-muted: rgb(112, 115, 255);
-// $yellow-muted: rgb(255, 230, 100); // Original RGB version
-$yellow-muted: #ffe664; // Hex version for jQuery
+$yellow-muted: rgb(255, 230, 100); // Original RGB version
+// $yellow-muted: #ffe664; // Hex version for jQuery
 $orange-muted: rgb(255, 150, 0);
 $sky-blue: #a7c5df;
 $cloud-white: #f7f0e3;
 $lines-brown: #3a2328;
-
 $red-amped: rgb(255, 38, 61);
 $green-amped: rgb(36, 214, 60);
 $blue-amped: rgb(38, 41, 255);
-// $yellow-amped: rgb(255, 242, 0); // Original RGB version
-$yellow-amped: #fff200; // Hex version for jQuery
+$yellow-amped: rgb(255, 242, 0); // Original RGB version
+// $yellow-amped: #fff200; // Hex version for jQuery
 $yellow: #ff0;
 $pale-blue: rgb(219, 255, 254);
 
@@ -36,7 +35,6 @@ header {
 }
 
 .radtabs-heading {
-  // background-color: $pale-blue;
   bottom: 8px;
   color: $green-muted;
   float: left;
@@ -53,7 +51,6 @@ header {
 }
 
 .first-sentence {
-  // background-color: $pale-blue;
   color: $red-muted;
   font-family: 'Varela Round', sans-serif;
   font-size: 24px;
@@ -82,25 +79,6 @@ header {
   position: relative;
   width: 90%;
 }
-
-// Including .view-tabs-button within 'Various Button Styles' selector \
-// led to slightly smaller font. Strange.
-// .view-tabs-button {
-//   background-color: $yellow-muted;
-//   border: 0;
-//   border-radius: 5px;
-//   color: $lines-brown;
-//   display: inline;
-//   flex-grow: 1;
-//   font-family: 'Audiowide', sans-serif;
-//   font-size: 16px;
-//   letter-spacing: 0;
-//   margin: 0 8px 10px;
-//   padding: 3px 12px;
-//   position: relative;
-//   text-transform: uppercase;
-//   top: 4px;
-// }
 
 // Various Button Styles…
 .nav-button,
@@ -165,7 +143,7 @@ header {
     outline: 0;
   }
 
-  &:hover:not(#showHideTabsButton):not(.new-tab-form-button):not(.update-tab-form-button):not(.delete-tab-form-button) {
+  &:hover:not(.new-tab-form-button):not(.update-tab-form-button):not(.delete-tab-form-button) {
     background-color: $yellow-amped;
   }
 }

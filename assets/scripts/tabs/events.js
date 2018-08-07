@@ -79,9 +79,6 @@ const addTabHandlers = () => {
     store.showHideCounter % 2 === 0 ? onGetTabs(event) : onClearTabs(event)
     store.showHideCounter++
   })
-  $('#showHideTabsButton').mouseover(() => { $('#showHideTabsButton').css('background-color', '#fff200') })
-  $('#showHideTabsButton').mouseout(() => { $('#showHideTabsButton').css('background-color', '#ffe664') })
-  $('#showHideTabsButton').click(() => { $('#showHideTabsButton').css('background-color', '##fff200') })
   $('.info-section').hide()
   $('.nav-bar').hide()
   $('#new-tab').on('submit', onNewTab)
