@@ -15,7 +15,7 @@ Technical Specifications
 - RESTful routes for handling GET, POST, PATCH, and DELETE requests
 - jQuery for DOM manipulation and event handling
 - AJAX for interacting with the custom API
-- Original design and layout
+- Responsive web design with original styling
 
 ## Background
 
@@ -46,7 +46,7 @@ Users of RadTabs can create an account from an email address and password, then 
 
 ## Future Features
 
-I would like to include calculations, so that a user can add up the number of hours spent on a project, for example. Also, I'd like to further refine the tabs interface and make it responsive.
+I would like to include calculations, so that a user can add up the number of hours spent on a project, for example.
 
 
 ## [License](LICENSE)
