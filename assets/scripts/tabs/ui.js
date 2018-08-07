@@ -9,6 +9,7 @@ const getTabsSuccess = (data) => {
   const showTabsHtml = showTabsTemplate({ tabs: data.tabs })
   $('.info-section').show()
   $('.tab-return-content').html(showTabsHtml)
+  $('.nav-button').css('background-color', '#ffe664')
 }
 
 const clearTabs = () => {
