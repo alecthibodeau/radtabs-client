@@ -9,6 +9,7 @@ const signUpSuccess = function (data) {
   setTimeout(function () {
     $('#signUpModal').modal('hide')
     $('#modalTitleSignUp').text('Sign up')
+    $('#sign-up').slideToggle(200)
     store.defaultMessageColor()
     $('#signInModal').modal('show')
   }, store.successTimeout)
