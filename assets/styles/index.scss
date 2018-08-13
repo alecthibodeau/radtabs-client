@@ -30,7 +30,7 @@ main {
 header {
   margin: 0 auto;
   position: relative;
-  top: 1vh;
+  top: 5px;
   width: 90%;
 }
 
@@ -270,12 +270,12 @@ input { // form input fields
   }
 
   .first-sentence {
-    bottom: 2vh;
+    bottom: 3px;
     margin: 0 auto;
   }
 
   .radtabs-text {
-    bottom: 2vh;
+    bottom: 3px;
   }
 
   th {
@@ -338,7 +338,7 @@ input { // form input fields
   }
 
   .first-sentence {
-    bottom: 2vh;
+    bottom: 2px;
     margin: 0 auto;
     text-align: center;
   }
