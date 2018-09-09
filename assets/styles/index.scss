@@ -3,7 +3,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Aldrich|Fredoka+One|Monoton|Varela+Round|Roboto|Audiowide');
 
-// Alec's mixes…
+/************************************
+COLOR MIXES
+************************************/
+
 $rainbow-yellow: #fbde84;
 $red-muted: rgb(246, 65, 84);
 $green-muted: rgb(119, 210, 131);
@@ -21,6 +24,10 @@ $yellow-amped: rgb(255, 242, 0); // Original RGB version
 // $yellow-amped: #fff200; // Hex version for jQuery
 $yellow: #ff0;
 $pale-blue: rgb(219, 255, 254);
+
+/************************************
+HEADER & NAV BAR
+************************************/
 
 main {
   margin: 0 auto;
@@ -81,7 +88,19 @@ header {
   width: 90%;
 }
 
-// Various Button Styles…
+a {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+/************************************
+BUTTON STYLES
+************************************/
+
 .nav-button,
 .form-button,
 .new-tab-form-button,
@@ -149,6 +168,10 @@ header {
   }
 }
 
+/************************************
+INFO SECTION
+************************************/
+
 .info-section {
   margin: 0 auto;
   max-width: 100%;
@@ -164,20 +187,8 @@ table {
   width: 90%;
 }
 
+td,
 th {
-  color: $green-muted;
-  font-family: 'Varela Round', sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-  max-width: 80px;
-  padding: 5px 20px;
-  pointer-events: none;
-  text-align: right;
-  text-transform: uppercase;
-  vertical-align: top;
-}
-
-td {
   color: $lines-brown;
   cursor: pointer;
   font-family: 'Varela Round', sans-serif;
@@ -187,11 +198,18 @@ td {
   overflow: hidden;
   padding: 2px 10px;
   position: relative;
-  text-align: right;
+  text-align: left;
   text-overflow: ellipsis;
-  vertical-align: bottom;
   white-space: nowrap;
   z-index: 1;
+
+  &.table-header {
+    color: $green-muted;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-transform: uppercase;
+  }
 }
 
 .modify-tab-button {
@@ -241,6 +259,7 @@ input { // form input fields
 }
 
 .modal-content {
+  border-radius: 1rem;
   padding: 3%;
 }
 
@@ -254,6 +273,10 @@ input { // form input fields
   text-transform: uppercase;
 }
 
+/******************
+BREAKPOINT 737px
+******************/
+
 @media only screen and (min-width: 737px) {
   .nav-bar,
   .intro-bar {
@@ -264,6 +287,10 @@ input { // form input fields
     font-size: 18px;
   }
 }
+
+/******************
+BREAKPOINT 650px
+******************/
 
 @media only screen and (max-width: 650px) {
   .radtabs-heading {
@@ -291,6 +318,10 @@ input { // form input fields
     display: none;
   }
 }
+
+/******************
+BREAKPOINT 500px
+******************/
 
 @media only screen and (max-width: 500px) {
   .nav-bar,
