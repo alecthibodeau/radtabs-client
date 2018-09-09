@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://nameless-oasis-50311.herokuapp.com',
+  production: 'https://radtabs-api.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
