@@ -55,12 +55,15 @@ header {
 .radtabs-heading {
   bottom: 8px;
   color: $green-muted;
+  cursor: pointer;
   float: left;
   font-family: 'Audiowide', sans-serif;
   font-size: 42px;
   margin: 0 3% 0 0;
+  pointer-events: auto;
   position: relative;
   text-transform: uppercase;
+  user-select: auto;
   z-index: 1;
 
   & .tabs-heading {
@@ -79,7 +82,7 @@ header {
   color: $lines-brown;
   font-family: 'Varela Round', sans-serif;
   font-size: 18px;
-  margin-bottom: 2%;
+  margin-bottom: 1rem;
   position: relative;
 }
 
@@ -341,19 +344,23 @@ BREAKPOINT 500px
 
 @media only screen and (max-width: 500px) {
   .radtabs-heading {
+    bottom: 0;
     float: none;
     margin: 0 auto;
     text-align: center;
   }
 
   .first-sentence {
-    bottom: 2px;
+    font-size: 18px;
     margin: 0 auto;
     text-align: center;
+    width: 88%;
   }
 
   .radtabs-text {
-    display: none;
+    font-size: 12px;
+    margin-bottom: 0.75rem;
+    width: 95%;
   }
 
   .nav-bar,

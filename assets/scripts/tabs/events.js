@@ -79,6 +79,9 @@ const addTabHandlers = () => {
     store.showHideCounter % 2 === 0 ? onGetTabs(event) : onClearTabs(event)
     store.showHideCounter++
   })
+  $('header').click(() => {
+    $('.top-text').toggle()
+  })
   $('.info-section').hide()
   $('.nav-bar').hide()
   $('#new-tab').on('submit', onNewTab)
