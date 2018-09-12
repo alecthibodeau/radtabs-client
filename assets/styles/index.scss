@@ -32,7 +32,6 @@ MIXINS
 @mixin table-cell {
   font-family: 'Varela Round', sans-serif;
   font-size: 15px;
-  max-width: 80px;
   text-align: left;
 }
 
@@ -235,7 +234,7 @@ th {
 
   color: $green-muted;
   font-weight: bold;
-  padding: 5px 1vw;
+  padding: 5px;
   text-transform: uppercase;
 }
 
@@ -245,7 +244,7 @@ td {
   color: $lines-brown;
   cursor: pointer;
   overflow: hidden;
-  padding: 2px 1vw;
+  padding: 2px 5px;
   position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -378,11 +377,6 @@ BREAKPOINT 500px
   .intro-bar {
     flex-direction: column;
     padding: 6px;
-  }
-
-  th,
-  td {
-    max-width: 60px;
   }
 
   .task-th,
