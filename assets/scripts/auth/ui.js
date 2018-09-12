@@ -29,6 +29,7 @@ const signInSuccess = function (data) {
   $('#modalTitleSignIn').text('Signed in successfully')
   store.successMessageColor()
   $('#sign-in').slideToggle(200)
+  $('.example-info').hide()
   $('#nav-sign-up').hide()
   $('#nav-sign-in').hide()
   $('.nav-bar').show()

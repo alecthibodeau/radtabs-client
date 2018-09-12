@@ -79,6 +79,9 @@ const addTabHandlers = () => {
     store.showHideCounter % 2 === 0 ? onGetTabs(event) : onClearTabs(event)
     store.showHideCounter++
   })
+  $('#nav-examples').click(() => {
+    $('.example-info').toggle()
+  })
   $('header').click(() => {
     $('.top-text').toggle()
   })

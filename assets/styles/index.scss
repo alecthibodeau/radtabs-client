@@ -179,7 +179,8 @@ BUTTON STYLES
   }
 }
 
-.modify-tab-button {
+.modify-tab-button,
+.modify-tab-button-example {
   background-color: $blue-muted;
   border-radius: 5px;
   color: $cloud-white;
@@ -190,6 +191,11 @@ BUTTON STYLES
   text-align: center;
   text-transform: uppercase;
   width: 50px;
+
+  &.modify-tab-button-example {
+    cursor: default;
+    pointer-events: none;
+  }
 
   &:focus {
     outline: 0;
@@ -219,12 +225,17 @@ table {
   width: 90%;
 }
 
+.example-info {
+  display: none;
+  pointer-events: none;
+}
+
 th {
   @include table-cell;
 
   color: $green-muted;
   font-weight: bold;
-  padding: 5px 10px;
+  padding: 5px 1vw;
   text-transform: uppercase;
 }
 
@@ -234,7 +245,7 @@ td {
   color: $lines-brown;
   cursor: pointer;
   overflow: hidden;
-  padding: 2px 10px;
+  padding: 2px 1vw;
   position: relative;
   text-overflow: ellipsis;
   white-space: nowrap;
