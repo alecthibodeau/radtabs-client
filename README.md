@@ -1,11 +1,21 @@
-# Keeping Tabs with RadTabs
+# RadTabs
 ## Full-Stack Project: Front-End
 
 ## Description
 
-Artists, keep tabs on your work with RadTabs! Quickly enter the details of any project for later reference. With RadTabs you can save information about Date, Project Name, Task, Time Spent and Notes. Not just for artists: carpenters, gardeners, bike mechanics or anyone with a self-directed projects can all use RadTabs.
+Keep tabs on your work with RadTabs. With RadTabs you can track your projects with details like dates, tasks, time and custom notes. Anyone with self-directed projects can use RadTabs — artists, carpenters, gardeners, bike mechanics and more. Create and save tabs by signing up for an account with any available email address: even a dummy one.
 
-## Summary
+## Screenshot
+![RadTabs Screenshot](https://i.imgur.com/Uvj8wk8.jpg)
+
+## Project Links
+
+- API Repository: https://github.com/alecthibodeau/radtabs-api
+- API Deployed: https://radtabs-api.herokuapp.com
+- Client Repository: https://github.com/alecthibodeau/radtabs-client
+- Client Deployed: https://alect.me/radtabs-client
+
+## Technologies
 
 I developed the RadTabs website as my second project while a student in the Web Development Immersive (WDI) course at General Assembly. I used JavaScript, CSS3/Sass, HTML5, Handlebars – with some Bootstrap for modals – as my primary programs for the front-end work. For the back-end I built an API using Ruby, Ruby on Rails and PostgreSQL. The database is stored at Heroku.
 
@@ -19,13 +29,9 @@ Technical Specifications
 
 ## Background
 
-Artists, musicians and other individuals making their own work are usually focused on the results. They have an idea of a drawing or a song, and they achieve their goals with a mixture of planning and experimentation.
+This project is a tracking program for the development of loosely-structured work. It allows a user to record the details of self-directed tasks. As an artist myself I've used such techniques before: usually scribbles on paper to jot down time spent on a drawing, which particular artists were inspiring me at the time, what library book I had referenced for research or the pen I was using.
 
-But once the final work appears, the specific steps taken in the frenzy of creation may be lost to time. Years later an artist may want to know how many hours the work took to complete… or what materials went into it… or who was an influence at the time.
-
-My project is a tracking program for the development of loosely-structured work. It allows a user to record the details of self-directed tasks. As an artist myself I've used such techniques before: usually scribbles on paper to jot down time spent on a drawing or to mention which artists were inspiring me at the time. There are gaps though. Sometimes I wish I had noted, for example, which type of pen I'd used for a certain drawing, or what library book contained a particular reference image I liked.
-
-With the RadTabs website I can quickly and easily track my work. I call the data entries "tabs" – as in "keeping tabs" on my work. And this project isn't limited to me, or even artists in particular. Anyone completing self-directed work can use it to keep tabs on what they do: woodworkers, plumbers, knitters, etc. Then the stored data can be referenced later and used as the basis for calculations.
+With the RadTabs website I can easily track the progress of my projects. I call the data entries "tabs" — as in keeping tabs on my work. Anyone completing self-directed work can use RadTabs to keep tabs on what they do: woodworkers, plumbers, knitters, etc. The stored data can be referenced later anytime.
 
 ## Features
 
@@ -38,19 +44,12 @@ Users of RadTabs can create an account from an email address and password, then 
 - As a user accessing the options I need to know how to create new tabs and modify existing ones: create, read, update, delete.
 - As a user who has finished entering my tabs information I need to know how to sign out so that I can keep my tabs private.
 
-## Entity Relationship Diagram (ERD)
-![RadTabs ERD](https://i.imgur.com/a6bfvTf.jpg)
-
 ## Wireframe
 ![RadTabs Wireframe](https://i.imgur.com/g6d9Uck.jpg)
 
 ## Future Features
 
-I would like to include calculations, so that a user can add up the number of hours spent on a project, for example.
+- Add calculations, so that a user can add up the number of hours spent on a project, for example.
 
-
-## [License](LICENSE)
-
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+----------------------------------------------------------------
+(C) 2018 Alec Thibodeau
