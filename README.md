@@ -3,7 +3,7 @@
 
 ## Description
 
-Keep tabs on your work with RadTabs. With RadTabs you can track your projects with details like dates, tasks, time and custom notes. Anyone with self-directed projects can use RadTabs — artists, carpenters, gardeners, bike mechanics and more. Create and save tabs by signing up for an account with any available email address: even a dummy one.
+Keep tabs on your work with RadTabs. With RadTabs you can track your projects with details like date, task, time and custom notes. Anyone with self-directed projects can use RadTabs — artists, carpenters, gardeners, bike mechanics and more. Create and save tabs by signing up for an account with any available email address: even a dummy one.
 
 ## Screenshot
 ![RadTabs Screenshot](https://i.imgur.com/Uvj8wk8.jpg)
