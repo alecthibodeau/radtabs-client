@@ -11,7 +11,6 @@ Keep tabs on your work with RadTabs. With RadTabs you can track your projects wi
 ## Project Links
 
 - API Repository: https://github.com/alecthibodeau/radtabs-api
-- API Deployed: https://radtabs-api.herokuapp.com
 - Client Repository: https://github.com/alecthibodeau/radtabs-client
 - Client Deployed: https://alect.me/radtabs-client
 
