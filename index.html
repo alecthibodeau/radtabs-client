@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>RadTabs</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body class="container-fluid">
+
+      <main>
+        <header>
+          <div class="radtabs-heading"><span class="rad-heading">Rad</span><span class="tabs-heading">tabs</span></div>
+          <div class="top-text first-sentence">Keep tabs on your work with RadTabs.</div>
+          <div class="top-text radtabs-text"> With RadTabs you can track your projects with details like date, task, minutes and custom notes.
+            Anyone with self-directed projects can use RadTabs — artists, carpenters, gardeners, bike mechanics and more.
+            Create and save tabs by signing up for an account with any available email address.</div>
+        </header>
+
+        <!-- intro bar -->
+        <div class="intro-bar">
+          <button class="nav-button validation-related-button" id="nav-sign-up" data-toggle="modal" data-target="#signUpModal">sign up</button>
+          <button class="nav-button validation-related-button" id="nav-sign-in" data-toggle="modal" data-target="#signInModal">sign in</button>
+          <button class="nav-button" id="nav-examples">examples</button>
+        </div>
+        <!-- nav bar -->
+        <div class="nav-bar">
+          <button class="nav-button" id="showHideTabsButton">view tabs</button>
+          <button class="nav-button" id="nav-new-tab" data-toggle="modal" data-target="#newTabModal">new tab</button>
+          <button class="nav-button validation-related-button" id="nav-change-password" data-toggle="modal" data-target="#changePasswordModal">change password</button>
+          <button class="nav-button" id="nav-sign-out" data-toggle="modal" data-target="#signOutModal">sign out</button>
+        </div>
+        <!-- example section -->
+        <section class="example-info">
+            <table>
+              <thead>
+                <tr>
+                  <th class="date-th table-header">Date</th>
+                  <th class="project-name-th table-header">Project</th>
+                  <th class="task-th table-header">Task</th>
+                  <th class="time-spent-th table-header">Minutes</th>
+                  <th class="notes-th table-header">Notes</th>
+                  <th class="modify-th table-header">Modify</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>09/01/18</td>
+                  <td>Lunar Calendar</td>
+                  <td class="task-td">sketch</td>
+                  <td class="time-spent-td">30</td>
+                  <td class="notes-td">library time</td>
+                  <td><div class="modify-tab-button-example">Modify</div></td>
+                </tr>
+                <tr>
+                  <td>09/02/18</td>
+                  <td>Lunar Calendar</td>
+                  <td class="task-td">sketch</td>
+                  <td class="time-spent-td">60</td>
+                  <td class="notes-td">library time</td>
+                  <td><div class="modify-tab-button-example">Modify</div></td>
+                </tr>
+                <tr>
+                  <td>09/04/18</td>
+                  <td>Lunar Calendar</td>
+                  <td class="task-td">sketch</td>
+                  <td class="time-spent-td">90</td>
+                  <td class="notes-td">library time</td>
+                  <td><div class="modify-tab-button-example">Modify</div></td>
+                </tr>
+                <tr>
+                  <td>09/07/18</td>
+                  <td>Lunar Calendar</td>
+                  <td class="task-td">pencil</td>
+                  <td class="time-spent-td">60</td>
+                  <td class="notes-td">top-left section</td>
+                  <td><div class="modify-tab-button-example">Modify</div></td>
+                </tr>
+                <tr>
+                  <td>09/08/18</td>
+                  <td>Lunar Calendar</td>
+                  <td class="task-td">pencil</td>
+                  <td class="time-spent-td">90</td>
+                  <td class="notes-td">top-right section</td>
+                  <td><div class="modify-tab-button-example">Modify</div></td>
+                </tr>
+                <tr>
+                  <td>09/12/18</td>
+                  <td>Lunar Calendar</td>
+                  <td class="task-td">pencil</td>
+                  <td class="time-spent-td">120</td>
+                  <td class="notes-td">bottom-left section</td>
+                  <td><div class="modify-tab-button-example">Modify</div></td>
+                </tr>
+                <tr>
+                  <td>09/15/18</td>
+                  <td>Lunar Calendar</td>
+                  <td class="task-td">pencil</td>
+                  <td class="time-spent-td">90</td>
+                  <td class="notes-td">bottom-right section</td>
+                  <td><div class="modify-tab-button-example">Modify</div></td>
+                </tr>
+                <tr>
+                  <td>09/21/18</td>
+                  <td>Lunar Calendar</td>
+                  <td class="task-td">pencil</td>
+                  <td class="time-spent-td">120</td>
+                  <td class="notes-td">border</td>
+                  <td><div class="modify-tab-button-example">Modify</div></td>
+                </tr>
+                <tr>
+                  <td>09/22/18</td>
+                  <td>Lunar Calendar</td>
+                  <td class="task-td">ink</td>
+                  <td class="time-spent-td">180</td>
+                  <td class="notes-td">top section</td>
+                  <td><div class="modify-tab-button-example">Modify</div></td>
+                </tr>
+                <tr>
+                  <td>09/27/18</td>
+                  <td>Lunar Calendar</td>
+                  <td class="task-td">ink</td>
+                  <td class="time-spent-td">120</td>
+                  <td class="notes-td">bottom section</td>
+                  <td><div class="modify-tab-button-example">Modify</div></td>
+                </tr>
+                <tr>
+                  <td>09/28/18</td>
+                  <td>Lunar Calendar</td>
+                  <td class="task-td">ink</td>
+                  <td class="time-spent-td">180</td>
+                  <td class="notes-td">border</td>
+                  <td><div class="modify-tab-button-example">Modify</div></td>
+                </tr>
+              </tbody>
+            </table>
+        </section>
+        <!-- info section -->
+        <section class="info-section">
+            <table>
+              <thead>
+                <tr>
+                  <th class="date-th table-header">Date</th>
+                  <th class="project-name-th table-header">Project</th>
+                  <th class="task-th table-header">Task</th>
+                  <th class="time-spent-th table-header">Minutes</th>
+                  <th class="notes-th table-header">Notes</th>
+                  <th class="modify-th table-header">Modify</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr><!-- Sum info here? --></tr>
+              </tfoot>
+              <tbody id="tab-return-content" class="tab-return-content">
+              </tbody>
+            </table>
+        </section>
+        <div class="credit-div">
+          <a class="at-line" href="https://alect.me" target="blank">Alec Thibodeau, 2021</a>
+        </div>
+
+      <!-- Sign Up Modal Begins -->
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modalTitleSignUp">Sign Up</h4>
+            <form id="sign-up" class="sign-up-panel">
+              <fieldset>
+                <input type="email" name="credentials[email]" placeholder="Email" autocomplete="on">
+                <input type="password" name="credentials[password]" placeholder="Password" autocomplete="off">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" autocomplete="off">
+                <input type="submit" class="form-button validation-related-button" value="submit">
+              </fieldset>
+            </form>
+            <div class="password-validation-message">
+              Password must be a minimum of 8 characters long, containing at least one letter and one number.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sign Up Modal Ends -->
+
+      <!-- Sign In Modal Begins -->
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modalTitleSignIn">Sign In</h4>
+            <form id="sign-in" class="sign-in-panel">
+              <fieldset>
+                <input type="email" name="credentials[email]" placeholder="Email" autocomplete="on">
+                <input type="password" name="credentials[password]" placeholder="Password" autocomplete="off">
+                <input type="submit" class="form-button validation-related-button" value="submit">
+              </fieldset>
+            </form>
+            <div class="password-validation-message">
+              Password must be a minimum of 8 characters long, containing at least one letter and one number.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sign In Modal Ends -->
+
+      <!-- Change Password Modal Begins -->
+      <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modalTitleChangePassword">Change Password</h4>
+            <form id="change-password" class="change-password-panel">
+              <fieldset>
+                <input type="password" name="passwords[old]" placeholder="Old Password" autocomplete="off">
+                <input type="password" name="passwords[new]" placeholder="New Password" autocomplete="off">
+                <input type="submit" class="form-button validation-related-button" value="submit">
+              </fieldset>
+            </form>
+            <div class="password-validation-message">
+              New password must be a minimum of 8 characters long, containing at least one letter and one number.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Change Password Modal Ends -->
+
+      <!-- New Tab Modal Begins -->
+      <div class="modal fade" id="newTabModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modalTitleNewTab">New Tab</h4>
+            <form id="new-tab" class="new-tab-panel">
+              <fieldset>
+                <input type="text" class="modal-field" name="tab[date]" placeholder="Date">
+                <input type="text" class="modal-field" name="tab[project_name]" placeholder="Project Name">
+                <input type="text" class="modal-field" name="tab[task]" placeholder="Task">
+                <input type="number" class="modal-field" name="tab[time_spent]" placeholder="Time (in minutes)">
+                <input type="text" class="modal-field" name="tab[notes]" placeholder="Notes">
+                <input type="submit" class="new-tab-form-button" value="submit">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- New Tab Modal Ends -->
+
+      <!-- Modify Tab Modal Begins -->
+      <div class="modal fade" id="modifyTabModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modalTitleModifyTab">Modify Tab</h4>
+            <form id="update-tab" class="update-tab-panel">
+              <fieldset>
+                <input type="text" class="modal-field" id="modal-field-date" name="tab[date]" placeholder="Date">
+                <input type="text" class="modal-field" id="modal-field-project-name" name="tab[project_name]" placeholder="Project Name">
+                <input type="text" class="modal-field" id="modal-field-task" name="tab[task]" placeholder="Task">
+                <input type="number" class="modal-field" id="modal-field-time-spent" name="tab[time_spent]" placeholder="Time (in minutes)">
+                <input type="text" class="modal-field" id="modal-field-notes" name="tab[notes]" placeholder="Notes">
+                <input type="submit" class="update-tab-form-button" value="update tab">
+              </fieldset>
+            </form>
+            <form id="delete-tab" class="delete-tab-panel">
+              <fieldset>
+                <input type="submit" class="delete-tab-form-button" value="delete tab">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Modify Tab Modal Ends -->
+
+      <!-- Sign Out Modal Begins -->
+      <div class="modal fade" id="signOutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-md" role="document">
+          <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modalTitleSignOut">Sign Out</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Sign Out Modal Ends -->
+
+      </main>
+    </body>
+
+</html>
