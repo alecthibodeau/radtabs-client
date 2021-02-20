@@ -20,20 +20,20 @@
           <div class="top-text first-sentence">Keep tabs on your work with RadTabs.</div>
           <div class="top-text radtabs-text"> With RadTabs you can track your projects with details like date, task, minutes and custom notes.
             Anyone with self-directed projects can use RadTabs — artists, carpenters, gardeners, bike mechanics and more.
-            Create and save tabs by signing up for an account with any available email address: even a dummy one.</div>
+            Create and save tabs by signing up for an account with any available email address.</div>
         </header>
 
         <!-- intro bar -->
         <div class="intro-bar">
-          <button class="nav-button" id="nav-sign-up" data-toggle="modal" data-target="#signUpModal">sign up</button>
-          <button class="nav-button" id="nav-sign-in" data-toggle="modal" data-target="#signInModal">sign in</button>
+          <button class="nav-button validation-related-button" id="nav-sign-up" data-toggle="modal" data-target="#signUpModal">sign up</button>
+          <button class="nav-button validation-related-button" id="nav-sign-in" data-toggle="modal" data-target="#signInModal">sign in</button>
           <button class="nav-button" id="nav-examples">examples</button>
         </div>
         <!-- nav bar -->
         <div class="nav-bar">
           <button class="nav-button" id="showHideTabsButton">view tabs</button>
           <button class="nav-button" id="nav-new-tab" data-toggle="modal" data-target="#newTabModal">new tab</button>
-          <button class="nav-button" id="nav-change-password" data-toggle="modal" data-target="#changePasswordModal">change password</button>
+          <button class="nav-button validation-related-button" id="nav-change-password" data-toggle="modal" data-target="#changePasswordModal">change password</button>
           <button class="nav-button" id="nav-sign-out" data-toggle="modal" data-target="#signOutModal">sign out</button>
         </div>
         <!-- example section -->
@@ -176,9 +176,12 @@
                 <input type="email" name="credentials[email]" placeholder="Email" autocomplete="on">
                 <input type="password" name="credentials[password]" placeholder="Password" autocomplete="off">
                 <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" autocomplete="off">
-                <input type="submit" class="form-button" value="submit">
+                <input type="submit" class="form-button validation-related-button" value="submit">
               </fieldset>
             </form>
+            <div class="password-validation-message">
+              Password must be a minimum of 8 characters long, containing at least one letter and one number.
+            </div>
           </div>
         </div>
       </div>
@@ -194,9 +197,12 @@
               <fieldset>
                 <input type="email" name="credentials[email]" placeholder="Email" autocomplete="on">
                 <input type="password" name="credentials[password]" placeholder="Password" autocomplete="off">
-                <input type="submit" class="form-button" value="submit">
+                <input type="submit" class="form-button validation-related-button" value="submit">
               </fieldset>
             </form>
+            <div class="password-validation-message">
+              Password must be a minimum of 8 characters long, containing at least one letter and one number.
+            </div>
           </div>
         </div>
       </div>
@@ -212,9 +218,12 @@
               <fieldset>
                 <input type="password" name="passwords[old]" placeholder="Old Password" autocomplete="off">
                 <input type="password" name="passwords[new]" placeholder="New Password" autocomplete="off">
-                <input type="submit" class="form-button" value="submit">
+                <input type="submit" class="form-button validation-related-button" value="submit">
               </fieldset>
             </form>
+            <div class="password-validation-message">
+              New password must be a minimum of 8 characters long, containing at least one letter and one number.
+            </div>
           </div>
         </div>
       </div>
