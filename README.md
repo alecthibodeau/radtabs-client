@@ -51,4 +51,4 @@ Users of RadTabs can create an account from an email address and password, then 
 - Add calculations, so that a user can add up the number of hours spent on a project, for example.
 
 ----------------------------------------------------------------
-(C) 2018 Alec Thibodeau
+(C) 2021 Alec Thibodeau
